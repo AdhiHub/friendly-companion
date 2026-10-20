@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+# Local data (never commit the user's conversations)
+data/*.db
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+data/uploads/
+data/**/*
+!data/.gitkeep
+*.log
+.DS_Store

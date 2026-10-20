@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Gethu — Your AI Companion</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/static/img/logo.svg">
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar" aria-label="Conversation history">
+      <div class="sidebar-head">
+        <div class="brand">
+          <img class="brand-mark" src="/static/img/logo.svg" alt="" aria-hidden="true">
+          <span class="brand-name">Gethu</span>
+        </div>
+        <button class="icon-btn sidebar-close" id="sidebar-close" title="Close sidebar" aria-label="Close sidebar">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <button class="new-chat-btn" id="new-chat-btn">
+        <i data-lucide="square-pen"></i>
+        <span>New chat</span>
+      </button>
+
+      <div class="search-box">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input type="search" id="conv-search" placeholder="Search chats" aria-label="Search conversations">
+      </div>
+
+      <nav class="conv-list" id="conv-list" aria-label="Conversations"></nav>
+
+      <div class="sidebar-foot">
+        <div class="service-status" id="service-status" title="Backend status">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Checking…</span>
+        </div>
+        <button class="foot-btn" id="settings-btn">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </button>
+      </div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebar-scrim" hidden></div>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+      <header class="chat-header">
+        <button class="icon-btn" id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar">
+          <i data-lucide="panel-left"></i>
+        </button>
+        <div class="chat-heading">
+          <h1 id="chat-title">Gethu</h1>
+          <select id="mode-select" class="mode-select" title="Conversation mode" aria-label="Conversation mode">
+            <option value="friendly">Friendly</option>
+            <option value="respectful">Respectful</option>
+            <option value="playful">Playful</option>
+            <option value="supportive">Supportive</option>
+            <option value="focused">Focused</option>
+          </select>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="stop-generation" title="Stop generating" aria-label="Stop generating" hidden>
+            <i data-lucide="octagon-x"></i>
+          </button>
+          <button class="icon-btn" id="voice-toggle" title="Voice output on/off" aria-label="Toggle voice output" aria-pressed="true">
+            <i data-lucide="volume-2"></i>
+          </button>
+          <button class="icon-btn" id="stop-speaking" title="Stop speaking" aria-label="Stop speaking" hidden>
+            <i data-lucide="volume-x"></i>
+          </button>
+        </div>
+      </header>
+
+      <section class="messages" id="messages" aria-live="polite">
+        <div class="empty-state" id="empty-state">
+          <img class="empty-mark" src="/static/img/logo.svg" alt="" aria-hidden="true">
+          <h2>Hey bro, sollu!</h2>
+          <p>Type something, or hit the mic and talk to Gethu.</p>
+          <div class="suggestions" id="suggestions">
+            <button class="suggestion">Innaiku enna plan pannirukka?</button>
+            <button class="suggestion">Explain recursion with a Tamil example</button>
+            <button class="suggestion">Help me plan my week</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="notice" id="notice" hidden role="alert">
+        <span id="notice-text"></span>
+        <button class="notice-close" id="notice-close" aria-label="Dismiss"><i data-lucide="x"></i></button>
+      </div>
+
+      <footer class="composer-area">
+        <div class="voice-banner" id="voice-banner" hidden>
+          <span class="voice-banner-text" id="voice-banner-text">Listening…</span>
+          <div class="voice-banner-actions">
+            <button type="button" class="ghost-btn" id="voice-send" hidden>Send now</button>
+            <button type="button" class="ghost-btn" id="voice-discard" hidden>Discard</button>
+            <button type="button" class="ghost-btn" id="stop-listening">Stop listening</button>
+          </div>
+        </div>
+
+        <div class="attach-previews" id="attach-previews" hidden></div>
+
+        <form class="composer" id="composer">
+          <button type="button" class="icon-btn" id="attach-btn" title="Attach image or file" aria-label="Attach file">
+            <i data-lucide="paperclip"></i>
+          </button>
+          <textarea id="message-input" rows="1" placeholder="Message Gethu…" aria-label="Message"></textarea>
+          <button type="button" class="icon-btn mic-btn" id="mic-btn" title="Start voice input" aria-label="Start voice input">
+            <i data-lucide="mic"></i>
+          </button>
+          <button type="button" class="icon-btn live-btn" id="live-btn" title="Start live voice conversation" aria-label="Start live voice conversation" aria-pressed="false">
+            <i data-lucide="radio"></i>
+          </button>
+          <button type="submit" class="send-btn" id="send-btn" title="Send" aria-label="Send message" disabled>
+            <i data-lucide="arrow-up"></i>
+          </button>
+        </form>
+
+        <p class="voice-hint" id="voice-hint" hidden></p>
+        <p class="composer-hint">Enter to send · Shift+Enter for a new line</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ============ SETTINGS MODAL ============ -->
+  <div class="modal-backdrop" id="settings-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-head">
+        <h2 id="settings-title">Settings</h2>
+        <button class="icon-btn" id="settings-close" aria-label="Close settings"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <section class="set-group">
+          <h3>Connection</h3>
+          <div class="set-row">
+            <div>
+              <label>Gemini API key</label>
+              <p class="muted" id="api-key-status">Checking…</p>
+            </div>
+            <span class="pill" id="api-key-pill">…</span>
+          </div>
+          <div class="set-row">
+            <div>
+              <label for="model-select">Model</label>
+              <p class="muted">Models available to your API account.</p>
+            </div>
+            <select id="model-select"></select>
+          </div>
+        </section>
+
+        <section class="set-group">
+          <h3>Voice output</h3>
+          <div class="set-row">
+            <div><label for="set-autospeak">Auto-speak replies</label>
+              <p class="muted">Read each completed reply aloud.</p></div>
+            <input type="checkbox" id="set-autospeak">
+          </div>
+          <div class="set-row">
+            <div><label for="voice-select">Voice</label>
+              <p class="muted">Browser voices on this device. Male voices are marked where the browser reports one.</p></div>
+            <select id="voice-select"><option value="">Default voice</option></select>
+          </div>
+          <div class="set-row">
+            <div><label for="rate-range">Speaking speed</label>
+              <p class="muted"><span id="rate-value">1.0</span>×</p></div>
+            <input type="range" id="rate-range" min="0.6" max="1.6" step="0.1" value="1">
+          </div>
+        </section>
+
+        <section class="set-group">
+          <h3>Voice input</h3>
+          <div class="set-row">
+            <div><label for="lang-select">Recognition language</label>
+              <p class="muted">Mixed Tanglish may need edits before sending.</p></div>
+            <select id="lang-select">
+              <option value="en-IN">English (India)</option>
+              <option value="ta-IN">தமிழ் (India)</option>
+              <option value="en-US">English (US)</option>
+            </select>
+          </div>
+          <div class="set-row">
+            <div><label>Voice input support</label>
+              <p class="muted" id="speech-support">Checking browser…</p></div>
+          </div>
+        </section>
+
+        <section class="set-group">
+          <h3>Appearance</h3>
+          <div class="set-row">
+            <div><label for="theme-select">Theme</label></div>
+            <select id="theme-select">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="set-group">
+          <h3>Data</h3>
+          <div class="set-row">
+            <div><label>Chat history</label>
+              <p class="muted">Stored locally in SQLite on this machine.</p></div>
+            <button class="danger-btn" id="clear-history">Clear all</button>
+          </div>
+        </section>
+
+        <section class="set-group">
+          <h3>About</h3>
+          <p class="muted">
+            Gethu runs fully on your machine; only your messages (and any attachments you
+            send) go to Google Gemini for replies. Browser speech recognition may use your
+            browser or operating system's own speech service — it is not guaranteed to be
+            offline. Browser voices pronounce Tanglish differently across devices.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,application/pdf,text/plain" hidden multiple>
+
+  <script src="/static/vendor/marked.min.js"></script>
+  <script src="/static/vendor/purify.min.js"></script>
+  <script src="/static/vendor/lucide.min.js"></script>
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
