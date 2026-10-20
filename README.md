@@ -29,6 +29,9 @@ voice subscription, no separate speech server, no cloud database.
   permission messages.
 - Markdown is cleaned before speaking, so Gethu never reads `#`, `**`, code
   fences or JSON aloud.
+- **Live conversation mode** — tap the radio button and talk hands-free. The
+  loop runs *listening → thinking → speaking → listening* until you stop it,
+  releasing the microphone before each reply so Gethu never hears itself.
 
 **Files**
 - Attach JPEG, PNG, WebP images, PDF and plain-text files (drag-drop or picker).
