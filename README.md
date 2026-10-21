@@ -110,8 +110,8 @@ loops on its own voice.
 
 Pick your system. Both take about **3 minutes**.
 
-> **⚡ Fastest path:** a setup script is included. It creates the virtual
-> environment, installs everything and prepares your `.env` for you.
+> **⚡ Fastest path — one command.** The setup script checks your whole system
+> before installing, so if something is missing it tells you exactly what to do.
 > ```bash
 > ./setup.sh && ./run.sh                        # Linux / macOS
 > ```
@@ -119,6 +119,11 @@ Pick your system. Both take about **3 minutes**.
 > .\setup.ps1 ; .\run.ps1                       # Windows
 > ```
 > Then just add your API key when prompted. Prefer to see each step? Read on.
+>
+> **What it checks for you** — Python 3.11+ (and tells you your version if it's
+> too old), the `venv` module, your internet connection, free disk space, and
+> whether port 8000 is already taken. Problems are collected and printed
+> together at the end with the fix for each one.
 
 <details open>
 <summary><b>🐧 Linux / 🍎 macOS</b></summary>
@@ -400,9 +405,9 @@ gethu-companion/
 | **"needs HTTPS or localhost"** | Open `http://127.0.0.1:8000`, not a LAN IP. |
 | **"Microphone permission was blocked"** | Allow the mic in the address-bar padlock menu, reload. |
 | **Replies error out** | Try another model in **Settings → Model**. |
-| **`ensurepip` error on Linux** | `sudo apt install python3-venv` then retry. |
+| **`ensurepip` error on Linux** | `sudo apt install python3-venv` then retry — `./setup.sh` detects this for you. |
 | **Old version loading after edits** | Hard-reload: `Ctrl + Shift + R`. |
-| **Port 8000 already in use** | Run with a different port: `--port 8001`. |
+| **Port 8000 already in use** | `GETHU_PORT=8001 ./run.sh` — `./setup.sh` checks this up front. |
 
 ---
 
