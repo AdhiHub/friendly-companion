@@ -66,6 +66,9 @@
       <circle cx="206" cy="575" r="9" fill="none" stroke="#a0a0a0" stroke-width="1.5"/>
       <circle cx="206" cy="575" r="3" fill="none" stroke="#a0a0a0" stroke-width="1.5"/>
       <path d="M199 582l4-4M210 568l-4 4" stroke="#a0a0a0" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- credit watermark -->
+      <text x="20" y="592" fill="#6e6e6e" font-size="10.5" opacity="0.85">Made by </text>
+      <text x="70" y="592" fill="#a0a0a0" font-size="10.5" font-weight="600" opacity="0.85">AdhiHub</text>
     </g>
 
     <!-- ============ main panel ============ -->

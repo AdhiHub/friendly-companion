@@ -235,6 +235,25 @@ svg { width: 18px; height: 18px; stroke-width: 1.8; }
   font-size: 14px;
 }
 .foot-btn:hover { background: var(--bg-hover); color: var(--text); }
+.credit {
+  margin: 2px 0 0;
+  padding: 0 6px;
+  font-size: 11px;
+  color: var(--text-faint);
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+.credit-name {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.credit-about {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+  user-select: none;
+}
 
 .sidebar-scrim {
   position: fixed;
