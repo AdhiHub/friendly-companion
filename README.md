@@ -14,7 +14,7 @@
 
 ---
 
-### 👀 This is what Gethu looks like
+### 👀 This is what Gethu looks like 
 
 <img src="docs/preview.svg" alt="Gethu chat interface — dark theme with sidebar, a Tanglish conversation, and the live voice button highlighted in green" width="880">
 
