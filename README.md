@@ -12,6 +12,17 @@
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![No Paid Voice API](https://img.shields.io/badge/voice-100%25%20free-success?style=flat-square)](#-why-it-costs-nothing)
 
+---
+
+### 👀 This is what Gethu looks like
+
+<img src="docs/preview.svg" alt="Gethu chat interface — dark theme with sidebar, a Tanglish conversation, and the live voice button highlighted in green" width="880">
+
+*A true-to-scale view of the app: conversation history on the left, a natural
+Tanglish chat in the middle, and the green **radio button** that starts hands-free
+voice mode. Voice replies are spoken aloud by your browser.*
+
+
 </div>
 
 ---

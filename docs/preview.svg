@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif">
+  <defs>
+    <clipPath id="win"><rect width="960" height="600" rx="14"/></clipPath>
+    <clipPath id="side"><rect width="250" height="600"/></clipPath>
+    <clipPath id="main"><rect x="250" width="710" height="600"/></clipPath>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#win)">
+    <!-- ============ window chrome ============ -->
+    <rect width="960" height="600" fill="#000000"/>
+    <rect width="960" height="38" fill="#0a0a0a"/>
+    <line x1="0" y1="38" x2="960" y2="38" stroke="#232323" stroke-width="1"/>
+    <circle cx="22" cy="19" r="6" fill="#e5534b"/>
+    <circle cx="42" cy="19" r="6" fill="#d9a03f"/>
+    <circle cx="62" cy="19" r="6" fill="#3fb96b"/>
+    <rect x="360" y="8" width="240" height="22" rx="6" fill="#131313"/>
+    <text x="480" y="23" fill="#a0a0a0" font-size="11.5" text-anchor="middle">127.0.0.1:8000</text>
+
+    <!-- ============ sidebar ============ -->
+    <g clip-path="url(#side)">
+      <rect y="38" width="250" height="562" fill="#0a0a0a"/>
+      <line x1="250" y1="38" x2="250" y2="600" stroke="#232323" stroke-width="1"/>
+
+      <!-- brand -->
+      <rect x="20" y="60" width="30" height="30" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.2"/>
+      <path fill="#ededed" d="M29 68h12a4 4 0 0 1 4 4v7a4 4 0 0 1-4 4h-5.1l-5.1 4.2a0.85 0.85 0 0 1-1.4-0.65V83a4 4 0 0 1-4-4v-7a4 4 0 0 1 4-4z"/>
+      <path fill="#1a1a1a" d="M35 79.8a0.85 0.85 0 0 1-.57-.22l-3-2.8a2.25 2.25 0 0 1 3.12-3.22l.5.5.5-.5a2.25 2.25 0 0 1 3.12 3.22l-3 2.8a0.85 0.85 0 0 1-.57.22z"/>
+      <text x="60" y="80" fill="#ededed" font-size="16" font-weight="650">Gethu</text>
+
+      <!-- new chat -->
+      <rect x="20" y="108" width="210" height="36" rx="9" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <path d="M38 120h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2z" fill="none" stroke="#a0a0a0" stroke-width="1.7"/>
+      <path d="M41 131l7-7" stroke="#a0a0a0" stroke-width="1.7" stroke-linecap="round"/>
+      <text x="60" y="131" fill="#ededed" font-size="13">New chat</text>
+
+      <!-- search -->
+      <rect x="20" y="156" width="210" height="30" rx="7" fill="#131313"/>
+      <circle cx="37" cy="171" r="5" fill="none" stroke="#6e6e6e" stroke-width="1.6"/>
+      <line x1="41" y1="175" x2="45" y2="179" stroke="#6e6e6e" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="54" y="175" fill="#6e6e6e" font-size="12">Search chats…</text>
+
+      <!-- conversation list -->
+      <rect x="14" y="200" width="222" height="38" rx="8" fill="#1c1c1c"/>
+      <text x="26" y="217" fill="#ededed" font-size="12.5">Vanakkam da, epdi irukka</text>
+      <text x="26" y="231" fill="#6e6e6e" font-size="10.5">Today</text>
+
+      <text x="26" y="262" fill="#ededed" font-size="12.5">Innaiku enna plan</text>
+      <text x="26" y="276" fill="#6e6e6e" font-size="10.5">Today</text>
+      <line x1="20" y1="286" x2="230" y2="286" stroke="#1a1a1a" stroke-width="1"/>
+
+      <text x="26" y="310" fill="#ededed" font-size="12.5">Help me write an email</text>
+      <text x="26" y="324" fill="#6e6e6e" font-size="10.5">Yesterday</text>
+      <line x1="20" y1="334" x2="230" y2="334" stroke="#1a1a1a" stroke-width="1"/>
+
+      <text x="26" y="358" fill="#ededed" font-size="12.5">Summarise this PDF</text>
+      <text x="26" y="372" fill="#6e6e6e" font-size="10.5">Yesterday</text>
+
+      <!-- footer status -->
+      <line x1="0" y1="556" x2="250" y2="556" stroke="#232323" stroke-width="1"/>
+      <circle cx="30" cy="575" r="4" fill="#3fb96b"/>
+      <text x="42" y="579" fill="#a0a0a0" font-size="11.5">Connected</text>
+      <circle cx="206" cy="575" r="9" fill="none" stroke="#a0a0a0" stroke-width="1.5"/>
+      <circle cx="206" cy="575" r="3" fill="none" stroke="#a0a0a0" stroke-width="1.5"/>
+      <path d="M199 582l4-4M210 568l-4 4" stroke="#a0a0a0" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- ============ main panel ============ -->
+    <g clip-path="url(#main)">
+      <rect x="250" y="38" width="710" height="562" fill="#000000"/>
+
+      <!-- header -->
+      <rect x="250" y="38" width="710" height="48" fill="#000000"/>
+      <line x1="250" y1="86" x2="960" y2="86" stroke="#232323" stroke-width="1"/>
+      <text x="278" y="68" fill="#ededed" font-size="16" font-weight="600">Vanakkam da, epdi irukka</text>
+
+      <!-- mode pill -->
+      <rect x="762" y="50" width="86" height="26" rx="13" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="805" y="67" fill="#ededed" font-size="11.5" text-anchor="middle">Friendly ▾</text>
+      <!-- speaker button -->
+      <circle cx="866" cy="63" r="13" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <path d="M861 60h2.6l3.4-3v12l-3.4-3H861z" fill="#a0a0a0"/>
+      <path d="M869 60a4.2 4.2 0 0 1 0 6" fill="none" stroke="#a0a0a0" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- radio (live voice) button - active -->
+      <circle cx="898" cy="63" r="13" fill="#3fb96b"/>
+      <circle cx="898" cy="63" r="3.2" fill="#ffffff"/>
+      <path d="M891 56a10 10 0 0 0 0 14M905 70a10 10 0 0 0 0-14" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- settings -->
+      <circle cx="930" cy="63" r="13" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <circle cx="930" cy="63" r="4.2" fill="none" stroke="#a0a0a0" stroke-width="1.6"/>
+      <g stroke="#a0a0a0" stroke-width="1.6" stroke-linecap="round">
+        <line x1="930" y1="54.5" x2="930" y2="57.5"/>
+        <line x1="930" y1="68.5" x2="930" y2="71.5"/>
+        <line x1="921.5" y1="63" x2="924.5" y2="63"/>
+        <line x1="935.5" y1="63" x2="938.5" y2="63"/>
+      </g>
+
+      <!-- ===== message 1: user (right) ===== -->
+      <rect x="676" y="112" width="256" height="46" rx="14" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="900" y="133" fill="#ededed" font-size="13" text-anchor="end">Hi da, epdi irukka?</text>
+      <text x="900" y="149" fill="#6e6e6e" font-size="10.5" text-anchor="end">10:24 AM</text>
+
+      <!-- ===== message 1: assistant (left) ===== -->
+      <circle cx="290" cy="196" r="15" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="290" y="201" fill="#ededed" font-size="12" font-weight="600" text-anchor="middle">G</text>
+      <text x="316" y="184" fill="#a0a0a0" font-size="11.5">Gethu</text>
+      <text x="362" y="184" fill="#6e6e6e" font-size="11.5">10:24 AM</text>
+      <text x="316" y="206" fill="#ededed" font-size="13.5">Naan super-ah irukken! Nee epdi irukka?</text>
+      <text x="316" y="226" fill="#ededed" font-size="13.5">Innaiku day epdi pogudhu?</text>
+      <!-- message actions -->
+      <g fill="none" stroke="#6e6e6e" stroke-width="1.4" stroke-linecap="round">
+        <path d="M318 240h7l3-3v10l-3-3h-7z"/>
+        <rect x="336" y="236" width="10" height="10" rx="2"/>
+        <path d="M358 238a4.5 4.5 0 1 1-1.4-2.4M356.5 233.5v2.6h2.6"/>
+      </g>
+
+      <!-- ===== message 2: user ===== -->
+      <rect x="641" y="266" width="291" height="46" rx="14" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="900" y="287" fill="#ededed" font-size="13" text-anchor="end">Innaiku enna plan pannirukka?</text>
+      <text x="900" y="303" fill="#6e6e6e" font-size="10.5" text-anchor="end">10:25 AM</text>
+
+      <!-- ===== message 2: assistant ===== -->
+      <circle cx="290" cy="352" r="15" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="290" y="357" fill="#ededed" font-size="12" font-weight="600" text-anchor="middle">G</text>
+      <text x="316" y="340" fill="#a0a0a0" font-size="11.5">Gethu</text>
+      <text x="362" y="340" fill="#6e6e6e" font-size="11.5">10:25 AM</text>
+      <text x="316" y="362" fill="#ededed" font-size="13.5">Enakku perusa plan onnum illa bro 😄 Naan</text>
+      <text x="316" y="382" fill="#ededed" font-size="13.5">un kooda pesurathukku ready-ah irukken.</text>
+      <text x="316" y="402" fill="#ededed" font-size="13.5">Unakku innaiku enna scene?</text>
+
+      <!-- listening banner (live mode active) -->
+      <rect x="278" y="428" width="654" height="34" rx="10" fill="rgba(63,185,107,0.10)" stroke="rgba(63,185,107,0.45)" stroke-width="1"/>
+      <circle cx="298" cy="445" r="4.5" fill="#3fb96b"/>
+      <text x="312" y="449" fill="#ededed" font-size="12.5">Listening… speak now</text>
+      <rect x="860" y="436" width="58" height="20" rx="6" fill="#131313" stroke="#232323" stroke-width="1"/>
+      <text x="889" y="450" fill="#a0a0a0" font-size="10.5" text-anchor="middle">Stop</text>
+
+      <!-- fading hint of more content -->
+      <rect x="250" y="462" width="710" height="24" fill="url(#fade)"/>
+
+      <!-- ===== composer ===== -->
+      <line x1="250" y1="486" x2="960" y2="486" stroke="#232323" stroke-width="1"/>
+      <rect x="278" y="500" width="654" height="44" rx="12" fill="#0a0a0a" stroke="#232323" stroke-width="1"/>
+
+      <!-- attach -->
+      <path d="M300 518a5.5 5.5 0 0 1 7.8 0l6.4 6.4a5.5 5.5 0 0 1-7.8 7.8l-7-7a3 3 0 0 1 4.2-4.2l6.6 6.6" fill="none" stroke="#a0a0a0" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="326" y="527" fill="#6e6e6e" font-size="13">Message Gethu…</text>
+
+      <!-- mic -->
+      <rect x="790" y="508" width="28" height="28" rx="8" fill="#131313"/>
+      <rect x="801" y="514" width="6" height="10" rx="3" fill="#a0a0a0"/>
+      <path d="M797 522a7 7 0 0 0 14 0M804 529v3" fill="none" stroke="#a0a0a0" stroke-width="1.6" stroke-linecap="round"/>
+
+      <!-- radio / live voice (the highlighted feature) -->
+      <rect x="826" y="508" width="28" height="28" rx="8" fill="#3fb96b"/>
+      <circle cx="840" cy="522" r="2.8" fill="#ffffff"/>
+      <path d="M834 516a8 8 0 0 0 0 12M846 528a8 8 0 0 0 0-12" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- send -->
+      <circle cx="900" cy="522" r="14" fill="#ededed"/>
+      <path d="M900 516v12M895 523l5 5 5-5" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="605" y="572" fill="#6e6e6e" font-size="11" text-anchor="middle">Enter to send · Shift+Enter for a new line</text>
+    </g>
+  </g>
+</svg>
