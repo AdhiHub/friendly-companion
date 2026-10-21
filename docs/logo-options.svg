@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="900" height="620" fill="#000000"/>
+
+  <text x="450" y="42" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — logo options</text>
+  <text x="450" y="64" fill="#6e6e6e" font-size="12" text-anchor="middle">each shown large, then at real size (32px) and favicon size (16px)</text>
+
+  <!-- ============ 1. WAVEFORM ============ -->
+  <g>
+    <rect x="40" y="90" width="180" height="180" rx="0" fill="none"/>
+    <rect x="40" y="90" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <rect x="72"  y="163" width="11" height="34" rx="5.5"/>
+      <rect x="93"  y="137" width="11" height="86" rx="5.5"/>
+      <rect x="114" y="112" width="11" height="136" rx="5.5"/>
+      <rect x="135" y="145" width="11" height="70" rx="5.5"/>
+      <rect x="156" y="124" width="11" height="112" rx="5.5"/>
+      <rect x="177" y="158" width="11" height="44" rx="5.5"/>
+    </g>
+    <text x="130" y="298" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">1 · Waveform</text>
+    <text x="130" y="316" fill="#6e6e6e" font-size="11" text-anchor="middle">voice, listening, speaking</text>
+    <rect x="82" y="330" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <rect x="88" y="343" width="2.4" height="6" rx="1.2"/>
+      <rect x="92.5" y="338" width="2.4" height="16" rx="1.2"/>
+      <rect x="97" y="335" width="2.4" height="22" rx="1.2"/>
+      <rect x="101.5" y="340" width="2.4" height="12" rx="1.2"/>
+      <rect x="106" y="343" width="2.4" height="6" rx="1.2"/>
+    </g>
+    <rect x="122" y="334" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <rect x="125" y="340.5" width="1.3" height="3" rx="0.6"/>
+      <rect x="127.5" y="338" width="1.3" height="8" rx="0.6"/>
+      <rect x="130" y="339.5" width="1.3" height="5" rx="0.6"/>
+      <rect x="132.5" y="337" width="1.3" height="10" rx="0.6"/>
+      <rect x="135" y="340.5" width="1.3" height="3" rx="0.6"/>
+    </g>
+  </g>
+
+  <!-- ============ 2. G MONOGRAM ============ -->
+  <g>
+    <rect x="260" y="90" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <text x="350" y="218" fill="#ededed" font-size="118" font-weight="700" text-anchor="middle" font-family="ui-sans-serif, -apple-system, sans-serif">G</text>
+    <text x="350" y="298" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">2 · G monogram</text>
+    <text x="350" y="316" fill="#6e6e6e" font-size="11" text-anchor="middle">clean brand mark</text>
+    <rect x="302" y="330" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <text x="318" y="354" fill="#ededed" font-size="21" font-weight="700" text-anchor="middle">G</text>
+    <rect x="342" y="334" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <text x="350" y="346" fill="#ededed" font-size="11" font-weight="700" text-anchor="middle">G</text>
+  </g>
+
+  <!-- ============ 3. BUBBLE + WAVE ============ -->
+  <g>
+    <rect x="480" y="90" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M510 122h120a14 14 0 0 1 14 14v58a14 14 0 0 1-14 14h-46l-30 24a2.2 2.2 0 0 1-3.5-1.8V208a14 14 0 0 1-14-14v-58a14 14 0 0 1 14-14z"/>
+    <g fill="#1a1a1a">
+      <rect x="536" y="160" width="8" height="22" rx="4"/>
+      <rect x="551" y="146" width="8" height="50" rx="4"/>
+      <rect x="566" y="134" width="8" height="74" rx="4"/>
+      <rect x="581" y="150" width="8" height="42" rx="4"/>
+      <rect x="596" y="142" width="8" height="58" rx="4"/>
+      <rect x="611" y="158" width="8" height="26" rx="4"/>
+    </g>
+    <text x="570" y="298" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">3 · Bubble + wave</text>
+    <text x="570" y="316" fill="#6e6e6e" font-size="11" text-anchor="middle">talking + listening</text>
+    <rect x="522" y="330" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M528 338h20a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-8l-5 4a0.5 0.5 0 0 1-0.8-0.4V353a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3z"/>
+    <g fill="#1a1a1a">
+      <rect x="532.5" y="345" width="1.7" height="5" rx="0.85"/>
+      <rect x="536" y="341.5" width="1.7" height="12" rx="0.85"/>
+      <rect x="539.5" y="344" width="1.7" height="7" rx="0.85"/>
+      <rect x="543" y="342.5" width="1.7" height="10" rx="0.85"/>
+    </g>
+    <rect x="562" y="334" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M565 337h10a1.6 1.6 0 0 1 1.6 1.6v4.6a1.6 1.6 0 0 1-1.6 1.6h-4l-2.6 2a0.3 0.3 0 0 1-0.4-0.25v-4.35a1.6 1.6 0 0 1-1.6-1.6v-4.6A1.6 1.6 0 0 1 565 337z"/>
+  </g>
+
+  <!-- ============ 4. PULSE ORB ============ -->
+  <g>
+    <rect x="700" y="90" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="790" cy="180" r="58" fill="none" stroke="#ededed" stroke-width="2.4" opacity="0.25"/>
+    <circle cx="790" cy="180" r="40" fill="none" stroke="#ededed" stroke-width="2.4" opacity="0.5"/>
+    <circle cx="790" cy="180" r="21" fill="#ededed"/>
+    <text x="790" y="298" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">4 · Pulse orb</text>
+    <text x="790" y="316" fill="#6e6e6e" font-size="11" text-anchor="middle">mic picking you up</text>
+    <rect x="742" y="330" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="758" cy="346" r="10" fill="none" stroke="#ededed" stroke-width="1.4" opacity="0.3"/>
+    <circle cx="758" cy="346" r="6.5" fill="none" stroke="#ededed" stroke-width="1.4" opacity="0.6"/>
+    <circle cx="758" cy="346" r="3.2" fill="#ededed"/>
+    <rect x="782" y="334" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="790" cy="342" r="4.5" fill="none" stroke="#ededed" stroke-width="0.9" opacity="0.55"/>
+    <circle cx="790" cy="342" r="1.8" fill="#ededed"/>
+  </g>
+
+  <!-- ============ 5. WAVE IN CIRCLE ============ -->
+  <g>
+    <rect x="40" y="400" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="130" cy="490" r="64" fill="none" stroke="#ededed" stroke-width="5"/>
+    <g fill="#ededed">
+      <rect x="98"  y="481" width="9" height="18" rx="4.5"/>
+      <rect x="115" y="466" width="9" height="48" rx="4.5"/>
+      <rect x="132" y="452" width="9" height="76" rx="4.5"/>
+      <rect x="149" y="470" width="9" height="40" rx="4.5"/>
+    </g>
+    <text x="130" y="608" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">5 · Wave in ring</text>
+    <rect x="82" y="628" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="98" cy="644" r="11" fill="none" stroke="#ededed" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <rect x="93" y="641.5" width="2" height="5" rx="1"/>
+      <rect x="96.5" y="638" width="2" height="12" rx="1"/>
+      <rect x="100" y="640" width="2" height="8" rx="1"/>
+    </g>
+    <rect x="122" y="634" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="130" cy="642" r="5.5" fill="none" stroke="#ededed" stroke-width="0.9"/>
+    <g fill="#ededed">
+      <rect x="127" y="640.5" width="1.1" height="3" rx="0.55"/>
+      <rect x="129" y="638.5" width="1.1" height="7" rx="0.55"/>
+      <rect x="131" y="640" width="1.1" height="4" rx="0.55"/>
+    </g>
+  </g>
+
+  <!-- ============ 6. WAVE + G DOT ============ -->
+  <g>
+    <rect x="260" y="400" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <rect x="292" y="472" width="11" height="36" rx="5.5"/>
+      <rect x="314" y="452" width="11" height="76" rx="5.5"/>
+      <rect x="336" y="466" width="11" height="48" rx="5.5"/>
+      <rect x="358" y="480" width="11" height="20" rx="5.5"/>
+    </g>
+    <circle cx="404" cy="490" r="26" fill="#ededed"/>
+    <text x="404" y="500" fill="#1a1a1a" font-size="30" font-weight="700" text-anchor="middle">G</text>
+    <text x="350" y="608" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">6 · Wave + G</text>
+    <rect x="302" y="628" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <rect x="307" y="640.5" width="2" height="7" rx="1"/>
+      <rect x="311" y="637" width="2" height="14" rx="1"/>
+      <rect x="315" y="640" width="2" height="8" rx="1"/>
+    </g>
+    <circle cx="325" cy="644" r="4.6" fill="#ededed"/>
+    <text x="325" y="647.5" fill="#1a1a1a" font-size="6" font-weight="700" text-anchor="middle">G</text>
+    <rect x="342" y="634" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <rect x="345.6" y="641" width="1.3" height="4" rx="0.65"/>
+      <rect x="348" y="639" width="1.3" height="8" rx="0.65"/>
+    </g>
+    <circle cx="352.6" cy="643" r="2.6" fill="#ededed"/>
+  </g>
+
+  <!-- ============ 7. SPARK / NODE ============ -->
+  <g>
+    <rect x="480" y="400" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M570 428l13.5 42.5L626 484l-42.5 13.5L570 540l-13.5-42.5L514 484l42.5-13.5z"/>
+    <text x="570" y="608" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">7 · Spark</text>
+    <rect x="522" y="628" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M538 635l2.8 8.6 8.6 2.8-8.6 2.8-2.8 8.6-2.8-8.6-8.6-2.8 8.6-2.8z"/>
+    <rect x="562" y="634" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M570 638l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+  </g>
+
+  <!-- ============ 8. INFINITY / LOOP ============ -->
+  <g>
+    <rect x="700" y="400" width="180" height="180" rx="44" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="13" stroke-linecap="round"
+          d="M790 490c0-24 14-38 32-38s32 14 32 38-14 38-32 38-32-14-32-38-14-38-32-38-32 14-32 38 14 38 32 38 32-14 32-38z"/>
+    <text x="790" y="608" fill="#ededed" font-size="14" font-weight="600" text-anchor="middle">8 · Loop</text>
+    <rect x="742" y="628" width="32" height="32" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="2.6" stroke-linecap="round"
+          d="M758 644c0-5 3-8 7-8s7 3 7 8-3 8-7 8-7-3-7-8-3-8-7-8-7 3-7 8 3 8 7 8 7-3 7-8z"/>
+    <rect x="782" y="634" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="1.4" stroke-linecap="round"
+          d="M790 642c0-2.4 1.4-3.8 3.4-3.8s3.4 1.4 3.4 3.8-1.4 3.8-3.4 3.8-3.4-1.4-3.4-3.8-1.4-3.8-3.4-3.8-3.4 1.4-3.4 3.8 1.4 3.8 3.4 3.8 3.4-1.4 3.4-3.8z"/>
+  </g>
+</svg>
