@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 900" width="960" height="900" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#e2e2e2"/>
+      <stop offset="1" stop-color="#9a9a9a"/>
+    </linearGradient>
+    <linearGradient id="glassDim" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#cfcfcf"/>
+      <stop offset="1" stop-color="#6a6a6a"/>
+    </linearGradient>
+    <radialGradient id="sphere" cx="0.35" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#dcdcdc"/>
+      <stop offset="1" stop-color="#8f8f8f"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="900" fill="#000000"/>
+
+  <text x="480" y="42" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — round 7: glass &amp; emoji</text>
+  <text x="480" y="64" fill="#6e6e6e" font-size="12" text-anchor="middle">shiny, jelly-like, glossy icons</text>
+
+  <!-- ===== 1. GLASS SMILEY ===== -->
+  <g>
+    <rect x="40" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="115" cy="167" r="52" fill="url(#sphere)"/>
+    <circle cx="115" cy="167" r="52" fill="none" stroke="url(#rim)" stroke-width="3"/>
+    <ellipse cx="94" cy="142" rx="19" ry="12" fill="#fff" opacity="0.85" transform="rotate(-35 94 142)"/>
+    <g fill="#3d3d3d">
+      <ellipse cx="97" cy="163" rx="7" ry="9"/>
+      <ellipse cx="133" cy="163" rx="7" ry="9"/>
+    </g>
+    <path d="M100 186q15 15 30 0" fill="none" stroke="#3d3d3d" stroke-width="5.5" stroke-linecap="round"/>
+    <text x="115" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">1 · Glass smiley</text>
+    <text x="115" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">shiny, friendly</text>
+    <rect x="76" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="90" cy="318" r="9.5" fill="url(#sphere)"/>
+    <ellipse cx="85" cy="313.5" rx="3.4" ry="2.2" fill="#fff" opacity="0.85" transform="rotate(-35 85 313.5)"/>
+    <g fill="#3d3d3d"><circle cx="86.6" cy="317.4" r="1.3"/><circle cx="93.4" cy="317.4" r="1.3"/></g>
+    <rect x="112" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="120" cy="318" r="5.4" fill="url(#sphere)"/>
+    <g fill="#3d3d3d"><circle cx="118" cy="317.3" r="0.75"/><circle cx="122" cy="317.3" r="0.75"/></g>
+  </g>
+
+  <!-- ===== 2. GLASS DOT (speech ellipsis) ===== -->
+  <g>
+    <rect x="220" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M250 122h90a17 17 0 0 1 17 17v40a17 17 0 0 1-17 17h-34l-28 22a2 2 0 0 1-3.2-1.6V196a17 17 0 0 1-17-17v-40a17 17 0 0 1 17-17z"/>
+    <path fill="url(#rim)" d="M250 122h90a17 17 0 0 1 17 17v8a17 17 0 0 1-17 17h-90a17 17 0 0 1-17-17v-8a17 17 0 0 1 17-17z" opacity="0.5"/>
+    <g fill="#3d3d3d">
+      <circle cx="275" cy="159" r="8"/>
+      <circle cx="295" cy="159" r="8"/>
+      <circle cx="315" cy="159" r="8"/>
+    </g>
+    <text x="295" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">2 · Glass bubble</text>
+    <text x="295" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">chat, glossy</text>
+    <rect x="256" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M261 309.5h18a3.4 3.4 0 0 1 3.4 3.4v8a3.4 3.4 0 0 1-3.4 3.4h-6.6l-5.4 4.4a0.4 0.4 0 0 1-0.6-0.3v-4.1h-5.4a3.4 3.4 0 0 1-3.4-3.4v-8a3.4 3.4 0 0 1 3.4-3.4z"/>
+    <g fill="#3d3d3d"><circle cx="266" cy="317" r="1.7"/><circle cx="270" cy="317" r="1.7"/><circle cx="274" cy="317" r="1.7"/></g>
+    <rect x="292" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M295 313h10a2 2 0 0 1 2 2v4.4a2 2 0 0 1-2 2h-4l-3 2.4a0.25 0.25 0 0 1-0.4-0.2v-2.2h-2.6a2 2 0 0 1-2-2V315a2 2 0 0 1 2-2z"/>
+    <g fill="#3d3d3d"><circle cx="298" cy="317.2" r="0.95"/><circle cx="300.4" cy="317.2" r="0.95"/><circle cx="302.8" cy="317.2" r="0.95"/></g>
+  </g>
+
+  <!-- ===== 3. GLASS HEART (you said no, but shiny ref) ===== -->
+  <g>
+    <rect x="400" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M475 214c-42-28-62-48-62-72 0-17 13-29 29-29 12 0 22 7 33 21 11-14 21-21 33-21 16 0 29 12 29 29 0 24-20 44-62 72z"/>
+    <ellipse cx="443" cy="140" rx="14" ry="9" fill="#fff" opacity="0.8" transform="rotate(-38 443 140)"/>
+    <text x="475" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">3 · Glass heart</text>
+    <text x="475" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">(for reference)</text>
+    <rect x="436" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M450 326c-7.6-5-11.2-8.7-11.2-13 0-3 2.4-5.2 5.2-5.2 2.2 0 4 1.3 6 3.8 2-2.5 3.8-3.8 6-3.8 2.8 0 5.2 2.2 5.2 5.2 0 4.3-3.6 8-11.2 13z"/>
+    <ellipse cx="444.4" cy="312.4" rx="2.5" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-38 444.4 312.4)"/>
+    <rect x="472" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M480 322.5c-4.3-2.9-6.4-5-6.4-7.4 0-1.7 1.4-3 3-3 1.2 0 2.3 0.75 3.4 2.2 1.1-1.45 2.2-2.2 3.4-2.2 1.6 0 3 1.3 3 3 0 2.4-2.1 4.5-6.4 7.4z"/>
+  </g>
+
+  <!-- ===== 4. GLASS STAR ===== -->
+  <g>
+    <rect x="580" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M655 116l14 42.5 44 1-35 26 13 43-36-24-36 24 13-43-35-26 44-1z"/>
+    <path fill="#fff" opacity="0.55" d="M655 116l14 42.5 12 0.3-15-42.8z"/>
+    <text x="655" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">4 · Glass star</text>
+    <text x="655" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">shiny, favourite</text>
+    <rect x="616" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M630 307.5l2.6 7.8 8.1 0.2-6.4 4.8 2.4 7.9-6.7-4.4-6.7 4.4 2.4-7.9-6.4-4.8 8.1-0.2z"/>
+    <rect x="652" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M660 312.4l1.5 4.4 4.6 0.1-3.6 2.7 1.3 4.5-3.8-2.5-3.8 2.5 1.3-4.5-3.6-2.7 4.6-0.1z"/>
+  </g>
+
+  <!-- ===== 5. GLASS GHOST ===== -->
+  <g>
+    <rect x="760" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M835 116a46 46 0 0 1 46 46v48a9 9 0 0 1-14.6 7l-9-6.9a7.3 7.3 0 0 0-8.8 0l-4.4 3.4a7.3 7.3 0 0 1-8.8 0l-4.4-3.4a7.3 7.3 0 0 0-8.8 0l-9 6.9a9 9 0 0 1-14.6-7v-48a46 46 0 0 1 46-46z"/>
+    <ellipse cx="806" cy="150" rx="15" ry="10" fill="#fff" opacity="0.6" transform="rotate(-35 806 150)"/>
+    <g fill="#3d3d3d">
+      <ellipse cx="820" cy="162" rx="7" ry="9.5"/>
+      <ellipse cx="850" cy="162" rx="7" ry="9.5"/>
+    </g>
+    <text x="835" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">5 · Glass ghost</text>
+    <text x="835" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">soft character</text>
+    <rect x="796" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M810 306.5a10 10 0 0 1 10 10v8a2 2 0 0 1-3.3 1.5l-2-1.5a1.6 1.6 0 0 0-1.9 0l-1 0.8a1.6 1.6 0 0 1-1.9 0l-1-0.8a1.6 1.6 0 0 0-1.9 0l-2 1.5a2 2 0 0 1-3.3-1.5v-8a10 10 0 0 1 10-10z"/>
+    <g fill="#3d3d3d"><ellipse cx="806.7" cy="316" rx="1.6" ry="2.1"/><ellipse cx="813.3" cy="316" rx="1.6" ry="2.1"/></g>
+    <rect x="832" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M840 312a5 5 0 0 1 5 5v4a1 1 0 0 1-1.7 0.8l-1-0.75a0.8 0.8 0 0 0-1 0l-0.5 0.4a0.8 0.8 0 0 1-1 0l-0.5-0.4a0.8 0.8 0 0 0-1 0l-1 0.75a1 1 0 0 1-1.7-0.8v-4a5 5 0 0 1 5-5z"/>
+  </g>
+
+  <!-- ===== 6. GLASS LIGHTNING ===== -->
+  <g>
+    <rect x="40" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M132 116l-46 60h30l-16 46 50-64h-32z"/>
+    <path fill="#fff" opacity="0.5" d="M132 116l-46 60h14l34-60z"/>
+    <text x="115" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">6 · Glass bolt</text>
+    <text x="115" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">fast, energy</text>
+    <rect x="76" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M94 638l-9 11.5h5.8l-3.1 8.8 9.6-12.2h-6.2z"/>
+    <rect x="112" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M122 641l-5.2 6.6h3.3l-1.8 5 5.5-7h-3.6z"/>
+  </g>
+
+  <!-- ===== 7. GLASS ORB (gem ball) ===== -->
+  <g>
+    <rect x="220" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="295" cy="495" r="52" fill="url(#sphere)"/>
+    <ellipse cx="272" cy="463" rx="14" ry="24" fill="#fff" opacity="0.5" transform="rotate(-28 272 463)"/>
+    <ellipse cx="298" cy="500" rx="8" ry="34" fill="url(#glassDim)" opacity="0.25" transform="rotate(18 298 500)"/>
+    <circle cx="295" cy="495" r="52" fill="none" stroke="url(#rim)" stroke-width="2.5"/>
+    <text x="295" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">7 · Glass ball</text>
+    <text x="295" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">3D sphere</text>
+    <rect x="256" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="270" cy="646" r="9.5" fill="url(#sphere)"/>
+    <ellipse cx="265.8" cy="640.4" rx="2.6" ry="4.4" fill="#fff" opacity="0.55" transform="rotate(-28 265.8 640.4)"/>
+    <rect x="292" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="300" cy="646" r="5.4" fill="url(#sphere)"/>
+    <ellipse cx="297.6" cy="642.8" rx="1.5" ry="2.5" fill="#fff" opacity="0.55" transform="rotate(-28 297.6 642.8)"/>
+  </g>
+
+  <!-- ===== 8. GLASS CAT ===== -->
+  <g>
+    <rect x="400" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M655 128c29 0 50 21 50 50 0 31-22 56-50 56s-50-25-50-56c0-29 21-50 50-50z" transform="translate(-180 0)"/>
+    <path fill="url(#glass)" d="M617 146l-9-26 26 13z" transform="translate(-180 0)"/>
+    <path fill="url(#glass)" d="M693 146l9-26-26 13z" transform="translate(-180 0)"/>
+    <ellipse cx="452" cy="452" rx="11" ry="7" fill="#fff" opacity="0.55" transform="rotate(-35 452 452)"/>
+    <g fill="#3d3d3d">
+      <ellipse cx="458" cy="494" rx="6.5" ry="9"/>
+      <ellipse cx="492" cy="494" rx="6.5" ry="9"/>
+    </g>
+    <path d="M468 510h14l-7 8z" fill="#3d3d3d"/>
+    <text x="475" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">8 · Glass cat</text>
+    <text x="475" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">cute + shiny</text>
+    <rect x="436" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M450 637c5.6 0 9.6 4 9.6 9.6 0 6-4.2 10.8-9.6 10.8s-9.6-4.8-9.6-10.8c0-5.6 4-9.6 9.6-9.6z"/>
+    <path fill="url(#glass)" d="M442.2 640.5l-1.7-5 5 2.5z"/>
+    <path fill="url(#glass)" d="M457.8 640.5l1.7-5-5 2.5z"/>
+    <g fill="#3d3d3d"><ellipse cx="446.6" cy="646" rx="1.4" ry="1.9"/><ellipse cx="453.4" cy="646" rx="1.4" ry="1.9"/></g>
+    <rect x="472" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M480 640.5c3.2 0 5.5 2.3 5.5 5.5 0 3.4-2.4 6.2-5.5 6.2s-5.5-2.8-5.5-6.2c0-3.2 2.3-5.5 5.5-5.5z"/>
+  </g>
+
+  <!-- ===== 9. GLASS SPARKLE CLUSTER ===== -->
+  <g>
+    <rect x="580" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M641 132l9 26.5 27 1.5-22 16 8 26.5-22-15-22 15 8-26.5-22-16 27-1.5z"/>
+    <path fill="url(#glass)" d="M690 178l5.5 16 16.5 1-13.4 9.6 4.8 16-13.4-9-13.4 9 4.8-16-13.4-9.6 16.5-1z" opacity="0.85"/>
+    <path fill="#fff" opacity="0.5" d="M641 132l9 26.5 7 0.4-9.4-26.9z"/>
+    <text x="655" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">9 · Glass sparkle</text>
+    <text x="655" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">magic, AI</text>
+    <rect x="616" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M626 638l2.2 6.3 6.5 0.4-5.3 3.8 1.9 6.3-5.3-3.6-5.3 3.6 1.9-6.3-5.3-3.8 6.5-0.4z"/>
+    <path fill="url(#glass)" d="M636.5 644l1.4 4 4.1 0.25-3.35 2.4 1.2 4-3.35-2.25-3.35 2.25 1.2-4-3.35-2.4 4.1-0.25z" opacity="0.85"/>
+    <rect x="652" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M658 641l1.3 3.8 3.9 0.2-3.2 2.3 1.2 3.8-3.2-2.2-3.2 2.2 1.2-3.8-3.2-2.3 3.9-0.2z"/>
+  </g>
+
+  <!-- ===== 10. GLASS PRISM / CUBE ===== -->
+  <g>
+    <rect x="760" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="url(#glass)" d="M835 440l45 26v52l-45 26-45-26v-52z"/>
+    <path fill="#1a1a1a" opacity="0.24" d="M835 440v104l45-26v-52z"/>
+    <path fill="#fff" opacity="0.42" d="M835 440l-45 26 45 26 45-26z"/>
+    <text x="835" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">10 · Glass cube</text>
+    <text x="835" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">solid, structured</text>
+    <rect x="796" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="url(#glass)" d="M810 636l9.5 5.5v11l-9.5 5.5-9.5-5.5v-11z"/>
+    <path fill="#fff" opacity="0.42" d="M810 636l-9.5 5.5 9.5 5.5 9.5-5.5z"/>
+    <rect x="832" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="url(#glass)" d="M840 640.5l5.4 3.1v6.3l-5.4 3.1-5.4-3.1v-6.3z"/>
+  </g>
+
+  <text x="480" y="780" fill="#6e6e6e" font-size="11.5" text-anchor="middle">shiny glass style — pick a number, or ask for an emoji shape you want glassed</text>
+</svg>

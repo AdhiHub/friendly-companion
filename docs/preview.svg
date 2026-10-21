@@ -27,7 +27,10 @@
 
       <!-- brand -->
       <rect x="20" y="60" width="30" height="30" rx="9" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.2"/>
-      <path fill="#ededed" d="M35 65.5l2.4 7.55a1 1 0 0 0 .63.63L45.6 76a1 1 0 0 1 0 1.9l-7.57 2.32a1 1 0 0 0-.63.63L35 88.4a1 1 0 0 1-1.9 0l-2.4-7.55a1 1 0 0 0-.63-.63L22.5 77.9a1 1 0 0 1 0-1.9l7.57-2.32a1 1 0 0 0 .63-.63L33.1 65.5a1 1 0 0 1 1.9 0z"/>
+      <path fill="#ededed" d="M35 66.5a7.2 7.2 0 0 1 7.2 7.2V81a1.4 1.4 0 0 1-2.3 1.1l-1.4-1.1a1.2 1.2 0 0 0-1.4 0l-.7.55a1.2 1.2 0 0 1-1.4 0l-.7-.55a1.2 1.2 0 0 0-1.4 0l-1.4 1.1A1.4 1.4 0 0 1 27.8 81v-7.3a7.2 7.2 0 0 1 7.2-7.2z"/>
+      <ellipse cx="31.2" cy="71.6" rx="2.3" ry="1.5" fill="#ffffff" opacity="0.6" transform="rotate(-35 31.2 71.6)"/>
+      <ellipse cx="32.9" cy="73.4" rx="1.1" ry="1.5" fill="#1a1a1a"/>
+      <ellipse cx="37.1" cy="73.4" rx="1.1" ry="1.5" fill="#1a1a1a"/>
       <text x="60" y="80" fill="#ededed" font-size="16" font-weight="650">Gethu</text>
 
       <!-- new chat -->

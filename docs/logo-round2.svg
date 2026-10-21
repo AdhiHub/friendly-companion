@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 880" width="960" height="880" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="960" height="880" fill="#000000"/>
+
+  <text x="480" y="40" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — round 2 (no sparkle)</text>
+  <text x="480" y="62" fill="#6e6e6e" font-size="12" text-anchor="middle">each at 150px, then 28px and 16px (favicon)</text>
+
+  <!-- ===== 1. SOUND WAVE BARS ===== -->
+  <g>
+    <rect x="40" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <rect x="67"  y="150" width="11" height="30" rx="5.5"/>
+      <rect x="87"  y="128" width="11" height="74" rx="5.5"/>
+      <rect x="107" y="110" width="11" height="110" rx="5.5"/>
+      <rect x="127" y="138" width="11" height="54" rx="5.5"/>
+      <rect x="147" y="122" width="11" height="86" rx="5.5"/>
+    </g>
+    <text x="115" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">1 · Wave bars</text>
+    <text x="115" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">voice</text>
+    <rect x="76" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <rect x="82" y="311" width="2.2" height="6" rx="1.1"/>
+      <rect x="86" y="306" width="2.2" height="16" rx="1.1"/>
+      <rect x="90" y="308" width="2.2" height="12" rx="1.1"/>
+      <rect x="94" y="312" width="2.2" height="4" rx="1.1"/>
+      <rect x="98" y="309" width="2.2" height="10" rx="1.1"/>
+    </g>
+    <rect x="112" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <rect x="115" y="312.5" width="1.4" height="3" rx="0.7"/>
+      <rect x="117.7" y="310" width="1.4" height="8" rx="0.7"/>
+      <rect x="120.4" y="311.5" width="1.4" height="5" rx="0.7"/>
+      <rect x="123.1" y="310.5" width="1.4" height="7" rx="0.7"/>
+    </g>
+  </g>
+
+  <!-- ===== 2. EQUALIZER DOTS ===== -->
+  <g>
+    <rect x="220" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <circle cx="252" cy="165" r="7"/>
+      <circle cx="252" cy="140" r="7"/>
+      <circle cx="252" cy="115" r="7" opacity="0.35"/>
+      <circle cx="287" cy="165" r="7"/>
+      <circle cx="287" cy="140" r="7"/>
+      <circle cx="287" cy="115" r="7"/>
+      <circle cx="287" cy="190" r="7" opacity="0.35"/>
+      <circle cx="322" cy="165" r="7"/>
+      <circle cx="322" cy="140" r="7" opacity="0.35"/>
+      <circle cx="322" cy="115" r="7"/>
+    </g>
+    <text x="295" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">2 · Equalizer dots</text>
+    <text x="295" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">sound</text>
+    <rect x="256" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <circle cx="263" cy="314" r="1.7"/>
+      <circle cx="263" cy="308" r="1.7"/>
+      <circle cx="269" cy="314" r="1.7"/>
+      <circle cx="269" cy="308" r="1.7"/>
+      <circle cx="275" cy="314" r="1.7"/>
+      <circle cx="275" cy="308" r="1.7" opacity="0.4"/>
+    </g>
+    <rect x="292" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <circle cx="297" cy="314" r="1.1"/>
+      <circle cx="297" cy="310.5" r="1.1"/>
+      <circle cx="301" cy="314" r="1.1"/>
+      <circle cx="301" cy="310.5" r="1.1"/>
+    </g>
+  </g>
+
+  <!-- ===== 3. ARROW / G SPEEDMARK ===== -->
+  <g>
+    <rect x="400" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+          d="M440 120l38 45-38 45"/>
+    <path fill="none" stroke="#ededed" stroke-width="15" stroke-linecap="round"
+          d="M492 120h30a38 38 0 0 1 0 90h-14" opacity="0.45"/>
+    <text x="475" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">3 · Chevron mark</text>
+    <text x="475" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">motion, clean</text>
+    <rect x="436" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M444 309l8 9-8 9"/>
+    <rect x="472" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M476.5 311l4.5 5-4.5 5"/>
+  </g>
+
+  <!-- ===== 4. CHAT TAIL SOLID ===== -->
+  <g>
+    <rect x="580" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M604 122h102a20 20 0 0 1 20 20v50a20 20 0 0 1-20 20h-40l-32 26a2 2 0 0 1-3.3-1.6V212a20 20 0 0 1-20-20v-50a20 20 0 0 1 20-20z"/>
+    <g fill="#1a1a1a">
+      <circle cx="632" cy="167" r="7"/>
+      <circle cx="655" cy="167" r="7"/>
+      <circle cx="678" cy="167" r="7"/>
+    </g>
+    <text x="655" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">4 · Chat dots</text>
+    <text x="655" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">conversation</text>
+    <rect x="616" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M620.5 306h19a3.8 3.8 0 0 1 3.8 3.8v9.4a3.8 3.8 0 0 1-3.8 3.8h-7.4l-6 4.9a0.4 0.4 0 0 1-0.65-0.3v-4.6h-4.95a3.8 3.8 0 0 1-3.8-3.8v-9.4a3.8 3.8 0 0 1 3.8-3.8z"/>
+    <g fill="#1a1a1a">
+      <circle cx="625.3" cy="314.5" r="1.5"/>
+      <circle cx="630" cy="314.5" r="1.5"/>
+      <circle cx="634.7" cy="314.5" r="1.5"/>
+    </g>
+    <rect x="652" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M655 309.5h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-4l-3 2.4a0.25 0.25 0 0 1-0.4-0.2v-2.2h-2.6a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"/>
+    <g fill="#1a1a1a">
+      <circle cx="658" cy="314" r="0.85"/>
+      <circle cx="660.5" cy="314" r="0.85"/>
+      <circle cx="663" cy="314" r="0.85"/>
+    </g>
+  </g>
+
+  <!-- ===== 5. SHIELD / HEX ===== -->
+  <g>
+    <rect x="760" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="14" stroke-linejoin="round"
+          d="M835 112l48 28v56l-48 28-48-28v-56z"/>
+    <circle cx="835" cy="168" r="13" fill="#ededed"/>
+    <text x="835" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">5 · Hex node</text>
+    <text x="835" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">solid, techy</text>
+    <rect x="796" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="2.6" stroke-linejoin="round" d="M810 306l9 5.2v10.4l-9 5.2-9-5.2v-10.4z"/>
+    <circle cx="810" cy="316.4" r="2.6" fill="#ededed"/>
+    <rect x="832" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="1.5" stroke-linejoin="round" d="M840 309.5l5 2.9v5.8l-5 2.9-5-2.9v-5.8z"/>
+    <circle cx="840" cy="315.3" r="1.5" fill="#ededed"/>
+  </g>
+
+  <!-- ===== 6. PULSE RINGS ===== -->
+  <g>
+    <rect x="40" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="115" cy="475" r="52" fill="none" stroke="#ededed" stroke-width="6" opacity="0.22"/>
+    <circle cx="115" cy="475" r="34" fill="none" stroke="#ededed" stroke-width="6" opacity="0.55"/>
+    <circle cx="115" cy="475" r="16" fill="#ededed"/>
+    <text x="115" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">6 · Pulse</text>
+    <text x="115" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">listening</text>
+    <rect x="76" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="90" cy="624" r="9.5" fill="none" stroke="#ededed" stroke-width="1.8" opacity="0.3"/>
+    <circle cx="90" cy="624" r="5.5" fill="none" stroke="#ededed" stroke-width="1.8" opacity="0.6"/>
+    <circle cx="90" cy="624" r="2.6" fill="#ededed"/>
+    <rect x="112" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="120" cy="624" r="5" fill="none" stroke="#ededed" stroke-width="1" opacity="0.6"/>
+    <circle cx="120" cy="624" r="1.8" fill="#ededed"/>
+  </g>
+
+  <!-- ===== 7. QUOTE MARK ===== -->
+  <g>
+    <rect x="220" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <g fill="#ededed">
+      <path d="M258 128v0z"/>
+      <path d="M262 440h26a14 14 0 0 1 14 14v26a14 14 0 0 1-14 14h-14l-12 12v-12h0a14 14 0 0 1-14-14v-26a14 14 0 0 1 14-14z"/>
+      <path d="M322 440h26a14 14 0 0 1 14 14v26a14 14 0 0 1-14 14h-14l-12 12v-12h0a14 14 0 0 1-14-14v-26a14 14 0 0 1 14-14z"/>
+    </g>
+    <text x="295" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">7 · Twin bubbles</text>
+    <text x="295" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">two-way talk</text>
+    <rect x="256" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <path d="M260 615h6.5a3 3 0 0 1 3 3v5.5a3 3 0 0 1-3 3h-3l-2.6 2.6v-2.6a3 3 0 0 1-3-3V618a3 3 0 0 1 3-3z"/>
+      <path d="M271 619h6.5a3 3 0 0 1 3 3v5.5a3 3 0 0 1-3 3h-3l-2.6 2.6v-2.6a3 3 0 0 1-3-3V622a3 3 0 0 1 3-3z"/>
+    </g>
+    <rect x="292" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <path d="M294.5 619.5h3.2a1.6 1.6 0 0 1 1.6 1.6v2.9a1.6 1.6 0 0 1-1.6 1.6h-1.4l-1.3 1.3v-1.3a1.6 1.6 0 0 1-1.6-1.6v-3a1.6 1.6 0 0 1 1.6-1.6z"/>
+      <path d="M302.5 621.5h3.2a1.6 1.6 0 0 1 1.6 1.6v2.9a1.6 1.6 0 0 1-1.6 1.6h-1.4l-1.3 1.3v-1.3a1.6 1.6 0 0 1-1.6-1.6v-3a1.6 1.6 0 0 1 1.6-1.6z"/>
+    </g>
+  </g>
+
+  <!-- ===== 8. ORBIT / ATOM ===== -->
+  <g>
+    <rect x="400" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="475" cy="475" r="14" fill="#ededed"/>
+    <ellipse cx="475" cy="475" rx="52" ry="22" fill="none" stroke="#ededed" stroke-width="7" opacity="0.75"/>
+    <ellipse cx="475" cy="475" rx="52" ry="22" fill="none" stroke="#ededed" stroke-width="7" opacity="0.75" transform="rotate(60 475 475)"/>
+    <ellipse cx="475" cy="475" rx="52" ry="22" fill="none" stroke="#ededed" stroke-width="7" opacity="0.75" transform="rotate(120 475 475)"/>
+    <text x="475" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">8 · Orbit</text>
+    <text x="475" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">intelligence</text>
+    <rect x="436" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="450" cy="624" r="3" fill="#ededed"/>
+    <ellipse cx="450" cy="624" rx="10" ry="4.2" fill="none" stroke="#ededed" stroke-width="1.6" opacity="0.8"/>
+    <ellipse cx="450" cy="624" rx="10" ry="4.2" fill="none" stroke="#ededed" stroke-width="1.6" opacity="0.8" transform="rotate(60 450 624)"/>
+    <ellipse cx="450" cy="624" rx="10" ry="4.2" fill="none" stroke="#ededed" stroke-width="1.6" opacity="0.8" transform="rotate(120 450 624)"/>
+    <rect x="472" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="480" cy="624" r="1.7" fill="#ededed"/>
+    <ellipse cx="480" cy="624" rx="5.6" ry="2.4" fill="none" stroke="#ededed" stroke-width="1" opacity="0.8"/>
+    <ellipse cx="480" cy="624" rx="5.6" ry="2.4" fill="none" stroke="#ededed" stroke-width="1" opacity="0.8" transform="rotate(60 480 624)"/>
+  </g>
+
+  <!-- ===== 9. MOON / CRESCENT ===== -->
+  <g>
+    <rect x="580" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M520 475a52 52 0 1 0 0 0z" transform="translate(-45 0)"/>
+    <path fill="#1a1a1a" d="M497 428a47 47 0 0 1 0 94 47 47 0 0 0 0-94z" transform="translate(-8 0)"/>
+    <circle cx="512" cy="452" r="0" fill="#ededed"/>
+    <text x="655" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">9 · Node link</text>
+    <text x="655" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">connection</text>
+    <rect x="616" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <g fill="#ededed">
+      <circle cx="624" cy="618" r="3.4"/>
+      <circle cx="632" cy="630" r="3.4"/>
+      <circle cx="622" cy="631" r="3.4" opacity="0.6"/>
+    </g>
+    <g stroke="#ededed" stroke-width="1.5" opacity="0.75">
+      <line x1="624" y1="618" x2="632" y2="630"/>
+      <line x1="632" y1="630" x2="622" y2="631"/>
+      <line x1="622" y1="631" x2="624" y2="618"/>
+    </g>
+    <rect x="652" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <g fill="#ededed">
+      <circle cx="658" cy="621" r="1.8"/>
+      <circle cx="662" cy="627" r="1.8"/>
+    </g>
+    <line x1="658" y1="621" x2="662" y2="627" stroke="#ededed" stroke-width="0.9" opacity="0.8"/>
+  </g>
+
+  <!-- ===== 10. GHOST / FACE ===== -->
+  <g>
+    <rect x="760" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M835 420a44 44 0 0 1 44 44v46a9 9 0 0 1-14.6 7l-8.6-6.6a7 7 0 0 0-8.4 0l-4.2 3.2a7 7 0 0 1-8.4 0l-4.2-3.2a7 7 0 0 0-8.4 0L814 517a9 9 0 0 1-14.6-7v-46a44 44 0 0 1 44-44z" transform="translate(9 -9) scale(0.9) translate(9 42)"/>
+    <g fill="#1a1a1a">
+      <ellipse cx="823" cy="455" rx="7" ry="9"/>
+      <ellipse cx="851" cy="455" rx="7" ry="9"/>
+    </g>
+    <text x="835" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">10 · Ghost</text>
+    <text x="835" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">friendly character</text>
+    <rect x="796" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M810 612a10 10 0 0 1 10 10v8a2 2 0 0 1-3.3 1.6l-2-1.5a1.6 1.6 0 0 0-1.9 0l-1 0.75a1.6 1.6 0 0 1-1.9 0l-1-0.75a1.6 1.6 0 0 0-1.9 0l-2 1.5A2 2 0 0 1 800 630v-8a10 10 0 0 1 10-10z"/>
+    <g fill="#1a1a1a">
+      <ellipse cx="806.5" cy="620" r="0" rx="1.7" ry="2.2"/>
+      <ellipse cx="813.5" cy="620" r="0" rx="1.7" ry="2.2"/>
+    </g>
+    <rect x="832" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M840 618.5a5 5 0 0 1 5 5v4a1 1 0 0 1-1.7 0.8l-1-0.75a0.8 0.8 0 0 0-1 0l-0.5 0.4a0.8 0.8 0 0 1-1 0l-0.5-0.4a0.8 0.8 0 0 0-1 0l-1 0.75A1 1 0 0 1 835 627.5v-4a5 5 0 0 1 5-5z"/>
+  </g>
+
+  <!-- ===== 11. CUBE / 3D BOX ===== -->
+  <g>
+    <rect x="40" y="700" width="0" height="0"/>
+    <rect x="40" y="700" width="150" height="0"/>
+    <text x="480" y="760" fill="#6e6e6e" font-size="11.5" text-anchor="middle">ask for more variants any time — just name a shape</text>
+  </g>
+</svg>

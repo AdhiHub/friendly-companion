@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 880" width="960" height="880" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="960" height="880" fill="#000000"/>
+
+  <text x="480" y="40" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — round 4: totally different</text>
+  <text x="480" y="62" fill="#6e6e6e" font-size="12" text-anchor="middle">no faces, no sparkles, no waves — new directions</text>
+
+  <!-- ===== 1. PAPER PLANE ===== -->
+  <g>
+    <rect x="40" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M199 120L63 176l52 20 12 40 22-32 50 18z" transform="translate(-40 0)"/>
+    <path fill="#1a1a1a" d="M159 120l-44 56 20 12z" transform="translate(-40 0)" opacity="0.35"/>
+    <text x="115" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">1 · Paper plane</text>
+    <text x="115" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">send, message</text>
+    <rect x="76" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M101 306l-20 7 7.5 3 1.8 5.8 3.2-4.6 7.2 2.6z" transform="translate(-14 0) scale(0.9) translate(3 3)"/>
+    <rect x="112" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M123.7 309.6l-8.3 3 3.2 1.2 0.8 2.5 1.3-2 3.1 1.1z"/>
+  </g>
+
+  <!-- ===== 2. FLAME ===== -->
+  <g>
+    <rect x="220" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M295 108c6 22-6 30-16 42-12 14-22 26-22 42 0 22 18 38 38 38s38-16 38-38c0-20-14-32-24-46-8-12-14-24-14-38z"/>
+    <path fill="#1a1a1a" d="M295 178c2 10-2 14-7 20-5 6-9 11-9 18 0 10 8 17 16 17s16-7 16-17c0-9-7-14-11-20-4-6-5-12-5-18z" opacity="0.45"/>
+    <text x="295" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">2 · Flame</text>
+    <text x="295" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">energy, warmth</text>
+    <rect x="256" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M270 305c2.2 6-1.4 8-3.6 11-2.6 3.4-4.4 5.8-4.4 9.2 0 5 4 8.8 8 8.8s8-3.8 8-8.8c0-4.4-3-7-5.2-10-1.8-2.6-2.8-5.2-2.8-10.2z"/>
+    <rect x="292" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M300 309c1.2 3.2-0.8 4.4-2 6-1.4 1.8-2.4 3.2-2.4 5 0 2.8 2.2 4.8 4.4 4.8s4.4-2 4.4-4.8c0-2.4-1.6-3.8-2.8-5.4-1-1.4-1.6-2.8-1.6-5.6z"/>
+  </g>
+
+  <!-- ===== 3. LEAF ===== -->
+  <g>
+    <rect x="400" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M475 112c46 0 70 30 70 66 0 40-32 66-70 66-38 0-70-26-70-66 0-36 24-66 70-66z" transform="translate(0 -6)"/>
+    <path d="M475 126v152" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round" transform="translate(0 -6)"/>
+    <g stroke="#1a1a1a" stroke-width="5" stroke-linecap="round" opacity="0.7" transform="translate(0 -6)">
+      <path d="M475 152l-26-14"/><path d="M475 152l26-14"/>
+      <path d="M475 182l-32-16"/><path d="M475 182l32-16"/>
+      <path d="M475 212l-26-14"/><path d="M475 212l26-14"/>
+    </g>
+    <text x="475" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">3 · Leaf</text>
+    <text x="475" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">growth, calm</text>
+    <rect x="436" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M450 305c9 0 13.6 5.8 13.6 12.8 0 7.8-6.2 12.8-13.6 12.8s-13.6-5-13.6-12.8c0-7 4.6-12.8 13.6-12.8z"/>
+    <path d="M450 308v20" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+    <g stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" opacity="0.75">
+      <path d="M450 313l-5-3"/><path d="M450 313l5-3"/>
+      <path d="M450 319l-6-3.4"/><path d="M450 319l6-3.4"/>
+    </g>
+    <rect x="472" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M480 309c4.6 0 7 3 7 6.6 0 4-3.2 6.6-7 6.6s-7-2.6-7-6.6c0-3.6 2.4-6.6 7-6.6z"/>
+  </g>
+
+  <!-- ===== 4. KEY ===== -->
+  <g>
+    <rect x="580" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="640" cy="152" r="30" fill="none" stroke="#ededed" stroke-width="15"/>
+    <path d="M662 174l46 46" stroke="#ededed" stroke-width="15" stroke-linecap="round"/>
+    <path d="M690 202l-10 10M706 218l-10 10" stroke="#ededed" stroke-width="15" stroke-linecap="round"/>
+    <text x="655" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">4 · Key</text>
+    <text x="655" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">unlock</text>
+    <rect x="616" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="625" cy="311" r="5.6" fill="none" stroke="#ededed" stroke-width="3"/>
+    <path d="M629 315l9 9" stroke="#ededed" stroke-width="3" stroke-linecap="round"/>
+    <rect x="652" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="658" cy="313" r="3.2" fill="none" stroke="#ededed" stroke-width="1.8"/>
+    <path d="M660.3 315.3l5 5" stroke="#ededed" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== 5. OWL ===== -->
+  <g>
+    <rect x="760" y="90" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M835 118c26 0 44 18 44 44v30c0 24-18 42-44 42s-44-18-44-42v-30c0-26 18-44 44-44z"/>
+    <path fill="#ededed" d="M801 130l-6-22 22 12z"/>
+    <path fill="#ededed" d="M869 130l6-22-22 12z"/>
+    <g fill="#1a1a1a">
+      <circle cx="821" cy="162" r="15"/>
+      <circle cx="849" cy="162" r="15"/>
+      <circle cx="821" cy="162" r="6"/>
+      <circle cx="849" cy="162" r="6"/>
+    </g>
+    <path d="M830 184l5 8 5-8z" fill="#1a1a1a"/>
+    <text x="835" y="268" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">5 · Owl</text>
+    <text x="835" y="285" fill="#6e6e6e" font-size="10.5" text-anchor="middle">wise, watching</text>
+    <rect x="796" y="300" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M810 305c5.4 0 9 3.8 9 9v6c0 5-3.6 8.6-9 8.6s-9-3.6-9-8.6v-6c0-5.2 3.6-9 9-9z"/>
+    <path fill="#ededed" d="M803.4 307.4l-1.2-4.6 4.6 2.5z"/>
+    <path fill="#ededed" d="M816.6 307.4l1.2-4.6-4.6 2.5z"/>
+    <g fill="#1a1a1a">
+      <circle cx="807" cy="314" r="3"/>
+      <circle cx="813" cy="314" r="3"/>
+    </g>
+    <rect x="832" y="306" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M840 309c3.2 0 5.4 2.2 5.4 5.4v3.6c0 3-2.2 5-5.4 5s-5.4-2-5.4-5v-3.6c0-3.2 2.2-5.4 5.4-5.4z"/>
+    <g fill="#1a1a1a">
+      <circle cx="838" cy="314.5" r="1.7"/>
+      <circle cx="842" cy="314.5" r="1.7"/>
+    </g>
+  </g>
+
+  <!-- ===== 6. COMPASS ===== -->
+  <g>
+    <rect x="40" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="115" cy="475" r="52" fill="none" stroke="#ededed" stroke-width="9"/>
+    <path fill="#ededed" d="M115 435l16 40-16-8-16 8z"/>
+    <path fill="#ededed" d="M115 515l-16-40 16 8 16-8z" opacity="0.35"/>
+    <text x="115" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">6 · Compass</text>
+    <text x="115" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">guidance</text>
+    <rect x="76" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="90" cy="624" r="10" fill="none" stroke="#ededed" stroke-width="2.2"/>
+    <path fill="#ededed" d="M90 617l3.2 8-3.2-1.6-3.2 1.6z"/>
+    <rect x="112" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="120" cy="624" r="5.6" fill="none" stroke="#ededed" stroke-width="1.4"/>
+    <path fill="#ededed" d="M120 620l1.8 4.6-1.8-0.9-1.8 0.9z"/>
+  </g>
+
+  <!-- ===== 7. PUZZLE PIECE ===== -->
+  <g>
+    <rect x="220" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M258 142h24a14 14 0 1 1 28 0h24a8 8 0 0 1 8 8v24a14 14 0 1 1 0 28v24a8 8 0 0 1-8 8h-24a14 14 0 1 0-28 0h-24a8 8 0 0 1-8-8v-24a14 14 0 1 1 0-28v-24a8 8 0 0 1 8-8z" transform="translate(0 33)"/>
+    <text x="295" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">7 · Puzzle</text>
+    <text x="295" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">fits you</text>
+    <rect x="256" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M262 615h4.6a2.6 2.6 0 1 1 5.2 0h4.6a1.6 1.6 0 0 1 1.6 1.6v4.6a2.6 2.6 0 1 1 0 5.2v4.6a1.6 1.6 0 0 1-1.6 1.6h-4.6a2.6 2.6 0 1 0-5.2 0H262a1.6 1.6 0 0 1-1.6-1.6v-4.6a2.6 2.6 0 1 1 0-5.2v-4.6a1.6 1.6 0 0 1 1.6-1.6z"/>
+    <rect x="292" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M295.6 619h2.6a1.5 1.5 0 1 1 3 0h2.6a1 1 0 0 1 1 1v2.6a1.5 1.5 0 1 1 0 3v2.6a1 1 0 0 1-1 1h-2.6a1.5 1.5 0 1 0-3 0h-2.6a1 1 0 0 1-1-1v-2.6a1.5 1.5 0 1 1 0-3v-2.6a1 1 0 0 1 1-1z"/>
+  </g>
+
+  <!-- ===== 8. INFINITY ===== -->
+  <g>
+    <rect x="400" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="16" stroke-linecap="round"
+          d="M475 475c0-16 10-26 24-26s24 10 24 26-10 26-24 26-24-10-24-26-10-26-24-26-24 10-24 26 10 26 24 26 24-10 24-26z" transform="translate(0 -8)"/>
+    <text x="475" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">8 · Infinity</text>
+    <text x="475" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">always there</text>
+    <rect x="436" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="3" stroke-linecap="round"
+          d="M450 624c0-3.4 2-5.4 5-5.4s5 2 5 5.4-2 5.4-5 5.4-5-2-5-5.4-2-5.4-5-5.4-5 2-5 5.4 2 5.4 5 5.4 5-2 5-5.4z"/>
+    <rect x="472" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="1.8" stroke-linecap="round"
+          d="M480 624c0-2 1.2-3.2 3-3.2s3 1.2 3 3.2-1.2 3.2-3 3.2-3-1.2-3-3.2-1.2-3.2-3-3.2-3 1.2-3 3.2 1.2 3.2 3 3.2 3-1.2 3-3.2z"/>
+  </g>
+
+  <!-- ===== 9. ANCHOR / SHIELD HEARTLESS ===== -->
+  <g>
+    <rect x="580" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="655" cy="145" r="17" fill="none" stroke="#ededed" stroke-width="12"/>
+    <path d="M655 162v70" stroke="#ededed" stroke-width="13" stroke-linecap="round"/>
+    <path d="M624 190h62" stroke="#ededed" stroke-width="13" stroke-linecap="round"/>
+    <path d="M620 216c0 30 16 46 35 46s35-16 35-46" fill="none" stroke="#ededed" stroke-width="13" stroke-linecap="round"/>
+    <text x="655" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">9 · Anchor</text>
+    <text x="655" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">steady, reliable</text>
+    <rect x="616" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="630" cy="616" r="3" fill="none" stroke="#ededed" stroke-width="2.2"/>
+    <path d="M630 619v9M625 624h10M623.5 627c0 4.4 2.6 6.6 6.5 6.6s6.5-2.2 6.5-6.6" fill="none" stroke="#ededed" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x="652" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="660" cy="619.5" r="1.6" fill="none" stroke="#ededed" stroke-width="1.2"/>
+    <path d="M660 621.5v4.5M657.5 624h5M656.7 625.4c0 2 1.4 3 3.3 3s3.3-1 3.3-3" fill="none" stroke="#ededed" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== 10. DIAMOND / GEM ===== -->
+  <g>
+    <rect x="760" y="400" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M835 116l46 34-46 72-46-72z" transform="translate(0 26)"/>
+    <path fill="#1a1a1a" d="M835 116v106l46-72z" transform="translate(0 26)" opacity="0.28"/>
+    <path d="M789 150h92" stroke="#1a1a1a" stroke-width="5" opacity="0.4" transform="translate(0 26)"/>
+    <text x="835" y="578" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">10 · Gem</text>
+    <text x="835" y="595" fill="#6e6e6e" font-size="10.5" text-anchor="middle">premium, valuable</text>
+    <rect x="796" y="610" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M810 614l9 6.6-9 14-9-14z"/>
+    <path fill="#1a1a1a" d="M810 614v20.6l9-14z" opacity="0.28"/>
+    <rect x="832" y="616" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M840 618l5 3.7-5 7.8-5-7.8z"/>
+  </g>
+
+  <text x="480" y="770" fill="#6e6e6e" font-size="11.5" text-anchor="middle">say the number, or describe the shape you picture</text>
+</svg>

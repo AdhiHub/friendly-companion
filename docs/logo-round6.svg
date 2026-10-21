@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 900" width="960" height="900" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="960" height="900" fill="#000000"/>
+
+  <text x="480" y="42" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — round 6: bold &amp; geometric</text>
+  <text x="480" y="64" fill="#6e6e6e" font-size="12" text-anchor="middle">letterforms, monograms, hard shapes</text>
+
+  <!-- ===== 1. G MONOGRAM BOLD ===== -->
+  <g>
+    <rect x="40" y="92" width="150" height="150" rx="38" fill="#ededed"/>
+    <text x="115" y="192" fill="#1a1a1a" font-size="104" font-weight="800" text-anchor="middle" font-family="ui-sans-serif, sans-serif">G</text>
+    <text x="115" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">1 · Inverted G</text>
+    <text x="115" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">bold, high contrast</text>
+    <rect x="76" y="304" width="28" height="28" rx="8" fill="#ededed"/>
+    <text x="90" y="324" fill="#1a1a1a" font-size="19" font-weight="800" text-anchor="middle">G</text>
+    <rect x="112" y="310" width="16" height="16" rx="4" fill="#ededed"/>
+    <text x="120" y="321.5" fill="#1a1a1a" font-size="11" font-weight="800" text-anchor="middle">G</text>
+  </g>
+
+  <!-- ===== 2. GE / TH LIGATURE ===== -->
+  <g>
+    <rect x="220" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="17" stroke-linecap="round"
+          d="M258 130v74M258 130h40M258 167h32"/>
+    <path fill="none" stroke="#ededed" stroke-width="17" stroke-linecap="round"
+          d="M320 130v74M320 167h34M354 130v74"/>
+    <text x="295" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">2 · G + T</text>
+    <text x="295" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">initials</text>
+    <rect x="256" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="3.2" stroke-linecap="round" d="M263 309v13M263 309h7M263 315.5h5.6M272 309v13M272 315.5h5.5M277.5 309v13"/>
+    <rect x="292" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="1.9" stroke-linecap="round" d="M296 312.5v7M296 312.5h4M296 316h3.2M301.3 312.5v7M301.3 316h3.2M304.5 312.5v7"/>
+  </g>
+
+  <!-- ===== 3. SOLID SQUIRCLE + CUT ===== -->
+  <g>
+    <rect x="400" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <rect x="432" y="124" width="86" height="86" rx="30" fill="#ededed"/>
+    <rect x="470" y="162" width="48" height="48" rx="16" fill="#1a1a1a"/>
+    <text x="475" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">3 · Nested cut</text>
+    <text x="475" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">abstract, modern</text>
+    <rect x="436" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <rect x="442" y="310" width="16" height="16" rx="5.6" fill="#ededed"/>
+    <rect x="449" y="317" width="9" height="9" rx="3" fill="#1a1a1a"/>
+    <rect x="472" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <rect x="475.5" y="313.5" width="9" height="9" rx="3.2" fill="#ededed"/>
+    <rect x="479.4" y="317.4" width="5" height="5" rx="1.8" fill="#1a1a1a"/>
+  </g>
+
+  <!-- ===== 4. ARROW UP-RIGHT ===== -->
+  <g>
+    <rect x="580" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"
+          d="M625 205l60-60M645 137h48v48"/>
+    <text x="655" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">4 · Arrow</text>
+    <text x="655" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">send, growth</text>
+    <rect x="616" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" d="M622 328l12-12M628 315h8.5v8.5"/>
+    <rect x="652" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M655.5 324l6.5-6.5M659 317h4.6v4.6"/>
+  </g>
+
+  <!-- ===== 5. HALF MOON SPLIT ===== -->
+  <g>
+    <rect x="760" y="92" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M835 115a52 52 0 0 1 0 104z"/>
+    <path fill="#ededed" d="M835 115a52 52 0 0 0 0 104z" opacity="0.35"/>
+    <circle cx="835" cy="167" r="10" fill="#1a1a1a"/>
+    <text x="835" y="272" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">5 · Split circle</text>
+    <text x="835" y="289" fill="#6e6e6e" font-size="10.5" text-anchor="middle">balance, duality</text>
+    <rect x="796" y="304" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M810 306.5a11.5 11.5 0 0 1 0 23z"/>
+    <path fill="#ededed" d="M810 306.5a11.5 11.5 0 0 0 0 23z" opacity="0.35"/>
+    <rect x="832" y="310" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M840 312a6.4 6.4 0 0 1 0 12.8z"/>
+    <path fill="#ededed" d="M840 312a6.4 6.4 0 0 0 0 12.8z" opacity="0.35"/>
+  </g>
+
+  <!-- ===== 6. STACKED BARS ===== -->
+  <g>
+    <rect x="40" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <rect x="64" y="502" width="102" height="18" rx="9" fill="#ededed"/>
+    <rect x="78" y="474" width="74" height="18" rx="9" fill="#ededed" opacity="0.7"/>
+    <rect x="94" y="446" width="42" height="18" rx="9" fill="#ededed" opacity="0.42"/>
+    <text x="115" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">6 · Steps</text>
+    <text x="115" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">progress, clarity</text>
+    <rect x="76" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <rect x="80" y="650" width="20" height="4" rx="2" fill="#ededed"/>
+    <rect x="82.5" y="644" width="15" height="4" rx="2" fill="#ededed" opacity="0.7"/>
+    <rect x="85.5" y="638" width="9" height="4" rx="2" fill="#ededed" opacity="0.42"/>
+    <rect x="112" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <rect x="114.4" y="648" width="11.2" height="2.4" rx="1.2" fill="#ededed"/>
+    <rect x="115.8" y="644.4" width="8.4" height="2.4" rx="1.2" fill="#ededed" opacity="0.7"/>
+  </g>
+
+  <!-- ===== 7. CROSS / PLUS SOFT ===== -->
+  <g>
+    <rect x="220" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="#ededed" d="M467 470h16a8 8 0 0 1 8 8v22h22a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8h-22v22a8 8 0 0 1-8 8h-16a8 8 0 0 1-8-8v-22h-22a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h22v-22a8 8 0 0 1 8-8z" transform="translate(-192 0)"/>
+    <text x="295" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">7 · Plus</text>
+    <text x="295" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">help, add</text>
+    <rect x="256" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="#ededed" d="M306 638.5h3.4a1.6 1.6 0 0 1 1.6 1.6v4.4h4.4a1.6 1.6 0 0 1 1.6 1.6v3.4a1.6 1.6 0 0 1-1.6 1.6h-4.4v4.4a1.6 1.6 0 0 1-1.6 1.6H306a1.6 1.6 0 0 1-1.6-1.6v-4.4h-4.4a1.6 1.6 0 0 1-1.6-1.6V646a1.6 1.6 0 0 1 1.6-1.6h4.4v-4.4a1.6 1.6 0 0 1 1.6-1.6z" transform="translate(-46 0)"/>
+    <rect x="292" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="#ededed" d="M326.6 641.5h2a1 1 0 0 1 1 1v2.5h2.5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2.5v2.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2.5h-2.5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2.5v-2.5a1 1 0 0 1 1-1z" transform="translate(-46 0)"/>
+  </g>
+
+  <!-- ===== 8. TARGET ===== -->
+  <g>
+    <rect x="400" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <circle cx="475" cy="495" r="50" fill="none" stroke="#ededed" stroke-width="12"/>
+    <circle cx="475" cy="495" r="26" fill="none" stroke="#ededed" stroke-width="12"/>
+    <circle cx="475" cy="495" r="8" fill="#ededed"/>
+    <path d="M475 420v26M475 544v26M400 495h26M524 495h26" stroke="#ededed" stroke-width="7" stroke-linecap="round" opacity="0.5"/>
+    <text x="475" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">8 · Target</text>
+    <text x="475" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">focus, accuracy</text>
+    <rect x="436" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <circle cx="450" cy="646" r="9.5" fill="none" stroke="#ededed" stroke-width="2.4"/>
+    <circle cx="450" cy="646" r="4.6" fill="none" stroke="#ededed" stroke-width="2.4"/>
+    <circle cx="450" cy="646" r="1.5" fill="#ededed"/>
+    <rect x="472" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <circle cx="480" cy="646" r="5.4" fill="none" stroke="#ededed" stroke-width="1.5"/>
+    <circle cx="480" cy="646" r="1.8" fill="#ededed"/>
+  </g>
+
+  <!-- ===== 9. WAVE / TILDE ===== -->
+  <g>
+    <rect x="580" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <path fill="none" stroke="#ededed" stroke-width="17" stroke-linecap="round"
+          d="M610 495c14-26 30-26 45 0s31 26 45 0"/>
+    <path fill="none" stroke="#ededed" stroke-width="17" stroke-linecap="round" opacity="0.42"
+          d="M610 448c14-26 30-26 45 0s31 26 45 0"/>
+    <text x="655" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">9 · Wave</text>
+    <text x="655" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">signal, sound</text>
+    <rect x="616" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <path fill="none" stroke="#ededed" stroke-width="3.4" stroke-linecap="round" d="M622 646c2.6-5 5.6-5 8.4 0s6 5 8.6 0"/>
+    <path fill="none" stroke="#ededed" stroke-width="3.4" stroke-linecap="round" opacity="0.42" d="M622 637c2.6-5 5.6-5 8.4 0s6 5 8.6 0"/>
+    <rect x="652" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <path fill="none" stroke="#ededed" stroke-width="2" stroke-linecap="round" d="M655.5 646c1.5-3 3.2-3 4.7 0s3.3 3 4.8 0"/>
+  </g>
+
+  <!-- ===== 10. NEGATIVE SPACE G ===== -->
+  <g>
+    <rect x="760" y="420" width="150" height="150" rx="38" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"/>
+    <rect x="792" y="442" width="86" height="106" rx="20" fill="#ededed"/>
+    <path fill="#1a1a1a" d="M820 468h34a14 14 0 0 1 14 14v44a14 14 0 0 1-14 14h-34a14 14 0 0 1-14-14v-44a14 14 0 0 1 14-14z"/>
+    <path fill="#ededed" d="M840 486h28v22h-14a10 10 0 0 1 0-20h14" />
+    <rect x="840" y="494" width="20" height="10" rx="5" fill="#ededed"/>
+    <text x="835" y="600" fill="#ededed" font-size="13.5" font-weight="600" text-anchor="middle">10 · Block G</text>
+    <text x="835" y="617" fill="#6e6e6e" font-size="10.5" text-anchor="middle">solid, strong</text>
+    <rect x="796" y="632" width="28" height="28" rx="8" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1"/>
+    <rect x="802" y="638" width="16" height="20" rx="4" fill="#ededed"/>
+    <path fill="#1a1a1a" d="M806 642h7a2.6 2.6 0 0 1 2.6 2.6v8.8a2.6 2.6 0 0 1-2.6 2.6h-7a2.6 2.6 0 0 1-2.6-2.6v-8.8a2.6 2.6 0 0 1 2.6-2.6z"/>
+    <rect x="806" y="646" width="5" height="3" rx="1.5" fill="#ededed"/>
+    <rect x="832" y="638" width="16" height="16" rx="4" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.8"/>
+    <rect x="835.5" y="641.5" width="9" height="11" rx="2.4" fill="#ededed"/>
+  </g>
+
+  <text x="480" y="780" fill="#6e6e6e" font-size="11.5" text-anchor="middle">round 6 of logos — tell me a number and it goes live</text>
+</svg>
