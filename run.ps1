@@ -1,4 +1,4 @@
-# Start Gethu (Windows). Runs setup automatically if needed.
+# Start Gethu (Windows). Runs setup automatically if needed. 
 
 $ErrorActionPreference = 'Stop'
 Set-Location -Path $PSScriptRoot
