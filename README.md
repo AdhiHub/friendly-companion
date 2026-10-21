@@ -9,7 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Tests](https://img.shields.io/badge/tests-126%20passing-brightgreen?style=flat-square)](#-testing)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 [![No Paid Voice API](https://img.shields.io/badge/voice-100%25%20free-success?style=flat-square)](#-why-it-costs-nothing)
 
 ---
@@ -354,7 +354,7 @@ gethu-companion/
 ├── data/                           runtime DB + uploads (gitignored)
 ├── setup.sh · run.sh               one-command setup/start (Linux, macOS)
 ├── setup.ps1 · run.ps1             one-command setup/start (Windows)
-└── .env.example · requirements.txt · pyproject.toml · LICENSE
+└── .env.example · requirements.txt · pyproject.toml · LICENSE · NOTICE
 ```
 
 ### Design decisions worth knowing
@@ -427,11 +427,42 @@ Worth being upfront about:
 
 ---
 
+## 📄 License & credit
+
+**Gethu is licensed under the [Apache License 2.0](LICENSE).**
+
+Plain English version:
+
+| | |
+|---|---|
+| ✅ **Use it** | Run it, study it, change it, share it — personal or commercial |
+| ✅ **Build on it** | Fork it, remix it, ship your own version |
+| ✅ **Modify it** | Rewrite as much as you like |
+| ⚠️ **Keep the credit** | Any copy or modified version you distribute **must keep the `LICENSE` and [`NOTICE`](NOTICE) files**, including the copyright line `Copyright 2026 AdhiHub` |
+| ⚠️ **Include the notice** | Modified versions must state clearly that you changed the files |
+| ❌ **Don't claim authorship** | You may not remove the copyright or present the original work as your own |
+| ❌ **Don't use the name** | You may not use "Gethu" or the author's name to endorse or promote your version without permission |
+| ❌ **No warranty** | Provided as-is; the author is not liable for anything |
+
+In short: **take it, learn from it, build with it — just don't erase who made it.**
+
+<details>
+<summary><b>What that looks like for a fork</b></summary>
+
+If you fork Gethu and publish your version:
+
+```
+your-fork/
+├── LICENSE      ← keep this (Apache-2.0)
+├── NOTICE       ← keep this, with "Copyright 2026 AdhiHub"
+└── README.md    ← add a line like:
+                    "Based on Gethu by AdhiHub — https://github.com/AdhiHub/gethu-companion"
+```
+
+That's it. You're free to use and change everything else.
+</details>
+
 <div align="center">
-
-## 📄 License
-
-**MIT** — see [LICENSE](LICENSE). Use it, change it, share it.
 
 Built with [FastAPI](https://fastapi.tiangolo.com), [Google Gemini](https://ai.google.dev),
 and the browser's own speech engine.

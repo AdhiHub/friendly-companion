@@ -3,6 +3,9 @@ name = "gethu-companion"
 version = "0.1.0"
 description = "Gethu — a personal AI companion with Tanglish conversation and browser voice"
 requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "AdhiHub" }]
 
 [tool.ruff]
 line-length = 100
