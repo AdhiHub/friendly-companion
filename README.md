@@ -469,9 +469,6 @@ That's it. You're free to use and change everything else.
 
 <div align="center">
 
-Built with [FastAPI](https://fastapi.tiangolo.com),(https://ai.google.dev),
-and the browser's own speech engine.
-
 **If Gethu made you smile, give the repo a ⭐**
 
 </div>
