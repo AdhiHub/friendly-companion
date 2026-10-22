@@ -4,9 +4,21 @@
 
 import { api, streamChat } from './api.js';
 import { enhanceCodeBlocks, escapeHtml, renderMarkdown } from './markdown.js';
+import { getCompanionInitial, getCompanionName } from './companion.js';
 
 const rawContent = new WeakMap();
 let uidCounter = 0;
+
+/**
+ * The companion's name and avatar letter. The name is owned by the backend
+ * (it also goes into the system prompt), so the chat surface just reads it.
+ */
+function companionName() {
+  return getCompanionName();
+}
+function companionInitial() {
+  return getCompanionInitial();
+}
 
 /**
  * Duplicate-submission guard. `acquire()` returns false while a send is
@@ -98,8 +110,8 @@ export function createChatController({
     article.className = `msg ${message.role}`;
     article.dataset.id = message.id;
     const isAssistant = message.role === 'assistant';
-    const who = isAssistant ? 'Gethu' : 'You';
-    const initial = isAssistant ? 'G' : 'You';
+    const who = isAssistant ? companionName() : 'You';
+    const initial = isAssistant ? companionInitial() : 'You';
 
     const attachmentsHtml = message.attachments?.length
       ? `<div class="msg-attachments">${message.attachments.map(attachmentChip).join('')}</div>`
@@ -146,7 +158,7 @@ export function createChatController({
   }
 
   function setTitle(title) {
-    if (els.title) els.title.textContent = title || 'Gethu';
+    if (els.title) els.title.textContent = title || companionName();
   }
 
   /* ---------------------------------------------------------- streaming */
@@ -155,11 +167,12 @@ export function createChatController({
     const article = document.createElement('article');
     article.className = 'msg assistant';
     article.dataset.id = meta?.assistant_message_id || uid('m');
+    const who = companionName();
     article.innerHTML = `
-      <div class="msg-avatar" aria-hidden="true">G</div>
+      <div class="msg-avatar" aria-hidden="true">${escapeHtml(companionInitial())}</div>
       <div class="msg-body">
-        <div class="msg-meta"><span class="msg-role">Gethu</span></div>
-        <div class="msg-content"><div class="typing" aria-label="Gethu is typing">
+        <div class="msg-meta"><span class="msg-role">${escapeHtml(who)}</span></div>
+        <div class="msg-content"><div class="typing" aria-label="${escapeHtml(who)} is typing">
           <span></span><span></span><span></span></div></div>
         <div class="msg-actions"></div>
       </div>`;
@@ -177,7 +190,7 @@ export function createChatController({
   async function send({ text, attachmentIds = [] } = {}) {
     const message = String(text ?? '').trim();
     if (!submitGuard.acquire()) {
-      toast('Gethu is already replying — hit stop first.');
+      toast(`${companionName()} is already replying — hit stop first.`);
       return false;
     }
     try {
@@ -271,11 +284,11 @@ export function createChatController({
           showNotice(`${error.message} (partial reply shown)`, 'error');
         } else if (assistantEl) {
           assistantEl.remove();
-          showNotice(error.message || 'Gethu could not reply.', 'error');
+          showNotice(error.message || `${companionName()} could not reply.`, 'error');
         } else {
           // Remove the optimistic user bubble only if nothing was accepted.
           if (!gotMeta) userArticle.remove();
-          showNotice(error.message || 'Gethu could not reply.', 'error');
+          showNotice(error.message || `${companionName()} could not reply.`, 'error');
           if (!gotMeta) showEmptyState(inner().querySelectorAll('.msg').length === 0);
         }
         onConversation?.({ id: state.conversationId, updated: true });
@@ -448,7 +461,7 @@ export function createChatController({
     state.lastPayload = null;
     state.spokenEl = null;
     voice.stop();
-    setTitle('Gethu');
+    setTitle(companionName());
     clearMessages();
   }
 

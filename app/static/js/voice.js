@@ -32,7 +32,7 @@ export function recognitionErrorMessage(code, support = {}) {
     return "This browser doesn't support speech recognition. Chrome or Edge on desktop usually do.";
   }
   if (!support.secure && (code === 'not-allowed' || code === 'service-not-allowed')) {
-    return 'Microphone access needs HTTPS or localhost — check how you opened Gethu.';
+    return 'Microphone access needs HTTPS or localhost — check how you opened the app.';
   }
   switch (code) {
     case 'not-allowed':

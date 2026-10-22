@@ -15,7 +15,7 @@
       <div class="sidebar-head">
         <div class="brand">
           <img class="brand-mark" src="/static/img/logo.svg" alt="" aria-hidden="true">
-          <span class="brand-name">Gethu</span>
+          <span class="brand-name" data-companion-name>Gethu</span>
         </div>
         <button class="icon-btn sidebar-close" id="sidebar-close" title="Close sidebar" aria-label="Close sidebar">
           <i data-lucide="x"></i>
@@ -55,7 +55,7 @@
           <i data-lucide="panel-left"></i>
         </button>
         <div class="chat-heading">
-          <h1 id="chat-title">Gethu</h1>
+          <h1 id="chat-title" data-companion-name>Gethu</h1>
           <select id="mode-select" class="mode-select" title="Conversation mode" aria-label="Conversation mode">
             <option value="friendly">Friendly</option>
             <option value="respectful">Respectful</option>
@@ -81,7 +81,7 @@
         <div class="empty-state" id="empty-state">
           <img class="empty-mark" src="/static/img/logo.svg" alt="" aria-hidden="true">
           <h2>Hey bro, sollu!</h2>
-          <p>Type something, or hit the mic and talk to Gethu.</p>
+          <p>Type something, or hit the mic and talk to <span data-companion-name>Gethu</span>.</p>
           <div class="suggestions" id="suggestions">
             <button class="suggestion">Innaiku enna plan pannirukka?</button>
             <button class="suggestion">Explain recursion with a Tamil example</button>
@@ -111,7 +111,7 @@
           <button type="button" class="icon-btn" id="attach-btn" title="Attach image or file" aria-label="Attach file">
             <i data-lucide="paperclip"></i>
           </button>
-          <textarea id="message-input" rows="1" placeholder="Message Gethu…" aria-label="Message"></textarea>
+          <textarea id="message-input" rows="1" placeholder="Message Gethu…" data-companion-placeholder="Message {name}…" aria-label="Message"></textarea>
           <button type="button" class="icon-btn mic-btn" id="mic-btn" title="Start voice input" aria-label="Start voice input">
             <i data-lucide="mic"></i>
           </button>
@@ -138,6 +138,24 @@
       </div>
       <div class="modal-body">
         <section class="set-group">
+          <h3>Companion</h3>
+          <div class="set-row">
+            <div>
+              <label for="companion-name">Name</label>
+              <p class="muted">What your companion calls itself.</p>
+            </div>
+            <input type="text" id="companion-name" maxlength="40" placeholder="Gethu" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="set-row">
+            <div>
+              <label>Run setup again</label>
+              <p class="muted">Change the name and the key in one place.</p>
+            </div>
+            <button type="button" class="ghost-btn" id="setup-btn">Open setup</button>
+          </div>
+        </section>
+
+        <section class="set-group">
           <h3>Connection</h3>
           <div class="set-row">
             <div>
@@ -145,6 +163,19 @@
               <p class="muted" id="api-key-status">Checking…</p>
             </div>
             <span class="pill" id="api-key-pill">…</span>
+          </div>
+          <div class="set-row">
+            <div>
+              <label for="api-key-input">Add or replace your key</label>
+              <p class="muted">
+                Paste it here and it is saved to <code>.env</code> on this machine.
+                <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get a free key</a>
+              </p>
+            </div>
+            <div class="key-input-row">
+              <input type="password" id="api-key-input" placeholder="AIza…" autocomplete="off" spellcheck="false">
+              <button type="button" class="ghost-btn" id="api-key-save">Save</button>
+            </div>
           </div>
           <div class="set-row">
             <div>
@@ -214,13 +245,13 @@
         <section class="set-group">
           <h3>About</h3>
           <p class="muted">
-            Gethu runs fully on your machine; only your messages (and any attachments you
+            <span data-companion-name>Gethu</span> runs fully on your machine; only your messages (and any attachments you
             send) go to Google Gemini for replies. Browser speech recognition may use your
             browser or operating system's own speech service — it is not guaranteed to be
             offline. Browser voices pronounce Tanglish differently across devices.
           </p>
           <p class="muted credit-about">
-            Gethu v0.1.0 · Made by <span class="credit-name">AdhiHub</span>
+            <span data-companion-name>Gethu</span> v0.1.0 · Made by <span class="credit-name">AdhiHub</span>
           </p>
         </section>
       </div>
@@ -229,6 +260,49 @@
 
   <div class="toast" id="toast" hidden></div>
   <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,application/pdf,text/plain" hidden multiple>
+
+  <!-- ============ WELCOME / SETUP SCREEN ============ -->
+  <!-- Shown on first run: name the companion and paste the Gemini API key. -->
+  <div class="modal-backdrop welcome-backdrop" id="welcome-modal" hidden>
+    <div class="modal welcome" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+      <div class="modal-body welcome-body">
+        <div class="welcome-head">
+          <img class="welcome-mark" src="/static/img/logo.svg" alt="" aria-hidden="true">
+          <h2 id="welcome-title">Welcome to <span id="welcome-brand">Gethu</span></h2>
+          <p class="muted">Two quick things, then you're ready to chat.</p>
+        </div>
+
+        <section class="welcome-step">
+          <label for="welcome-name">What should I call you?</label>
+          <p class="muted">That's my name. Change it any time in Settings.</p>
+          <input type="text" id="welcome-name" maxlength="40" placeholder="Gethu" autocomplete="off" spellcheck="false">
+          <div class="name-suggestions" id="welcome-name-suggestions">
+            <button type="button" class="chip" data-name="Gethu">Gethu</button>
+            <button type="button" class="chip" data-name="Mithu">Mithu</button>
+            <button type="button" class="chip" data-name="Sahai">Sahai</button>
+            <button type="button" class="chip" data-name="Yaali">Yaali</button>
+          </div>
+        </section>
+
+        <section class="welcome-step" id="welcome-key-step">
+          <label for="welcome-key">Your Gemini API key</label>
+          <p class="muted">
+            Free, and takes about a minute.
+            <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Get a key</a>
+          </p>
+          <input type="password" id="welcome-key" placeholder="AIza…" autocomplete="off" spellcheck="false">
+          <p class="welcome-hint">Stored only on this machine, in your <code>.env</code> file.</p>
+        </section>
+
+        <p class="welcome-error" id="welcome-error" hidden role="alert"></p>
+
+        <div class="welcome-actions">
+          <button type="button" class="ghost-btn" id="welcome-skip">Skip for now</button>
+          <button type="button" class="primary-btn" id="welcome-save">Start chatting</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="/static/vendor/marked.min.js"></script>
   <script src="/static/vendor/purify.min.js"></script>

@@ -1,6 +1,8 @@
 /* Thin API client + SSE streaming over fetch. The Gemini key never reaches
    this file — everything goes through the local backend. */
 
+import { getCompanionName } from './companion.js';
+
 export class ApiError extends Error {
   constructor(message, { status = 0, kind = 'http' } = {}) {
     super(message);
@@ -19,7 +21,7 @@ function friendlyDetail(payload, status) {
   }
   if (status === 413) return 'That file is too large.';
   if (status === 404) return 'Not found.';
-  if (status >= 500) return 'Gethu had a server problem. Try again.';
+  if (status >= 500) return `${getCompanionName()} had a server problem. Try again.`;
   return `Request failed (${status}).`;
 }
 
@@ -37,7 +39,7 @@ async function request(method, path, body) {
   try {
     response = await fetch(path, options);
   } catch {
-    throw new ApiError("Can't reach the Gethu server. Is it running?", { status: 0, kind: 'network' });
+    throw new ApiError(`Can't reach the ${getCompanionName()} server. Is it running?`, { status: 0, kind: 'network' });
   }
   if (!response.ok) {
     let payload = null;
@@ -82,7 +84,7 @@ export async function streamChat(payload, handlers = {}, signal) {
     });
   } catch (err) {
     if (err?.name === 'AbortError') throw err;
-    handlers.onError?.({ message: "Can't reach the Gethu server.", kind: 'network' });
+    handlers.onError?.({ message: `Can't reach the ${getCompanionName()} server.`, kind: 'network' });
     return;
   }
 

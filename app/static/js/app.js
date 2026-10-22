@@ -5,6 +5,8 @@ import { api } from './api.js';
 import { createAttachmentManager } from './attachments.js';
 import { createChatController } from './chat.js';
 import { createSettingsPanel } from './settings.js';
+import { createWelcomeScreen } from './welcome.js';
+import { setCompanionName } from './companion.js';
 import { loadPrefs, savePrefs } from './storage.js';
 import {
   createLiveConversation,
@@ -509,6 +511,10 @@ const settings = createSettingsPanel({
     closeBtn: $('settings-close'),
     apiStatus: $('api-key-status'),
     apiPill: $('api-key-pill'),
+    apiKeyInput: $('api-key-input'),
+    apiKeySave: $('api-key-save'),
+    name: $('companion-name'),
+    setupBtn: $('setup-btn'),
     model: $('model-select'),
     autospeak: $('set-autospeak'),
     voiceURI: $('voice-select'),
@@ -526,6 +532,32 @@ const settings = createSettingsPanel({
   onClearHistory() {
     startNewChat();
     loadConversations();
+  },
+  onOpenWelcome() {
+    welcome.open(lastSettings);
+  },
+});
+
+/* ---------------------------------------------------------- welcome screen */
+
+let lastSettings = null;
+
+const welcome = createWelcomeScreen({
+  els: {
+    modal: $('welcome-modal'),
+    name: $('welcome-name'),
+    key: $('welcome-key'),
+    keyStep: $('welcome-key-step'),
+    brand: $('welcome-brand'),
+    error: $('welcome-error'),
+    save: $('welcome-save'),
+    skip: $('welcome-skip'),
+    suggestions: $('welcome-name-suggestions'),
+  },
+  toast,
+  onDone() {
+    checkHealth();
+    settings.refreshStatus();
   },
 });
 
@@ -588,15 +620,36 @@ window.addEventListener('beforeunload', () => {
 
 /* -------------------------------------------------------------------- go */
 
+/**
+ * Load the server-side settings (model, companion name) and mirror them into
+ * the UI. On a fresh install without an API key the welcome screen opens so
+ * the user can finish setup in the browser.
+ */
+async function loadSettings() {
+  try {
+    lastSettings = await api.get('/api/settings');
+  } catch {
+    lastSettings = null;
+    return;
+  }
+  if (!lastSettings) return;
+  setCompanionName(lastSettings.companion_name || 'Gethu');
+  if (lastSettings.setup_complete === false) {
+    welcome.open(lastSettings);
+  }
+}
+
 function init() {
   applyTheme(prefs().theme);
   renderVoiceToggle();
   chat.bind();
   attachments.bind();
   settings.bind();
+  welcome.bind();
   refreshIcons();
   loadConversations();
   checkHealth();
+  loadSettings();
   chat.focus();
   // Voices load asynchronously in Chromium; re-read now and once more shortly.
   synth.refreshVoices();

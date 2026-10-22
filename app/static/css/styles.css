@@ -748,6 +748,147 @@ input[type="range"] { accent-color: var(--accent); }
 .pill.ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 50%, transparent); }
 .pill.err { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 50%, transparent); }
 
+/* ---------------- text inputs ---------------- */
+input[type="text"], input[type="password"] {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13.5px;
+  color: var(--text);
+  outline: none;
+  font-family: inherit;
+  max-width: 100%;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: var(--text-dim);
+}
+input::placeholder { color: var(--text-faint); }
+
+.set-row input[type="text"], .set-row input[type="password"] {
+  flex: none;
+  min-width: 170px;
+  width: 200px;
+}
+.key-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.key-input-row input { width: 210px; }
+
+/* ---------------- welcome / first-run setup ---------------- */
+.welcome-backdrop { z-index: 80; }
+.welcome {
+  width: min(520px, 100%);
+  max-height: min(88vh, 820px);
+}
+.welcome-body { padding: 22px 22px 18px; }
+.welcome-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.welcome-mark {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 10px;
+}
+.welcome-head h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  font-weight: 650;
+}
+.welcome-head p { margin: 0; }
+.welcome-step {
+  padding: 14px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.welcome-step label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.welcome-step input[type="text"],
+.welcome-step input[type="password"] {
+  width: 100%;
+  margin-top: 9px;
+}
+.welcome-hint {
+  margin: 7px 0 0;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+.welcome-hint code {
+  background: var(--bg-3);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 11.5px;
+}
+.name-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+.chip {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.chip:hover { color: var(--text); border-color: var(--text-faint); }
+.chip.active {
+  color: var(--text);
+  border-color: var(--text-dim);
+  background: var(--bg-hover);
+}
+.welcome-error {
+  margin: 12px 0 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent);
+  color: var(--danger);
+  font-size: 13px;
+}
+.welcome-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+.primary-btn {
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.primary-btn:hover { background: var(--accent-strong); }
+.primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 520px) {
+  .set-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .set-row input[type="text"], .set-row input[type="password"] { width: 100%; }
+  .key-input-row { width: 100%; }
+  .key-input-row input { width: 100%; }
+  .welcome-actions { flex-direction: column-reverse; }
+  .welcome-actions button { width: 100%; }
+}
+
 .danger-btn {
   padding: 7px 13px;
   border-radius: 8px;

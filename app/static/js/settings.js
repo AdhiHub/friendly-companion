@@ -4,6 +4,7 @@
 
 import { api } from './api.js';
 import { detectSupport, rankVoices } from './voice.js';
+import { setCompanionName } from './companion.js';
 
 export function createSettingsPanel({
   els,
@@ -11,6 +12,7 @@ export function createSettingsPanel({
   prefs,
   applyTheme,
   onClearHistory = null,
+  onOpenWelcome = null,
   toast = () => {},
 }) {
   const support = detectSupport(globalThis);
@@ -60,19 +62,61 @@ export function createSettingsPanel({
       fillModels(settings);
       if (els.apiStatus) {
         els.apiStatus.textContent = settings.api_key_configured
-          ? 'Key detected on the server (.env).'
-          : 'No key found — copy .env.example to .env and add GEMINI_API_KEY.';
+          ? 'Key detected on the server.'
+          : 'No key yet — paste one below to get started.';
       }
       if (els.apiPill) {
         els.apiPill.textContent = settings.api_key_configured ? 'Ready' : 'Missing';
         els.apiPill.className = `pill ${settings.api_key_configured ? 'ok' : 'err'}`;
       }
+      if (els.name && document.activeElement !== els.name) {
+        els.name.value = settings.companion_name || 'Gethu';
+      }
+      setCompanionName(settings.companion_name || 'Gethu');
     } catch (err) {
       if (els.apiStatus) els.apiStatus.textContent = err.message;
       if (els.apiPill) {
         els.apiPill.textContent = 'Offline';
         els.apiPill.className = 'pill err';
       }
+    }
+  }
+
+  /** Save a new API key typed into the settings panel. */
+  async function saveApiKey() {
+    const key = (els.apiKeyInput?.value || '').trim();
+    if (!key) {
+      toast('Paste your Gemini API key first');
+      els.apiKeyInput?.focus();
+      return;
+    }
+    els.apiKeySave?.setAttribute('disabled', 'disabled');
+    try {
+      const result = await api.post('/api/settings/api-key', { api_key: key });
+      if (els.apiKeyInput) els.apiKeyInput.value = '';
+      toast(result.message || 'API key saved');
+      await refreshStatus();
+    } catch (err) {
+      toast(err.message || 'Could not save that key');
+    } finally {
+      els.apiKeySave?.removeAttribute('disabled');
+    }
+  }
+
+  /** Save a new companion name. */
+  async function saveName() {
+    const name = (els.name?.value || '').trim();
+    if (!name) {
+      toast('Give your companion a name');
+      els.name?.focus();
+      return;
+    }
+    try {
+      const updated = await api.put('/api/settings', { companion_name: name });
+      setCompanionName(updated.companion_name);
+      toast(`Your companion is now called ${updated.companion_name}`);
+    } catch (err) {
+      toast(err.message);
     }
   }
 
@@ -141,6 +185,27 @@ export function createSettingsPanel({
         toast(err.message);
         refreshStatus();
       }
+    });
+
+    els.name?.addEventListener('change', saveName);
+    els.name?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        saveName();
+      }
+    });
+
+    els.apiKeySave?.addEventListener('click', saveApiKey);
+    els.apiKeyInput?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        saveApiKey();
+      }
+    });
+
+    els.setupBtn?.addEventListener('click', () => {
+      close();
+      onOpenWelcome?.();
     });
 
     els.theme?.addEventListener('change', () => {
