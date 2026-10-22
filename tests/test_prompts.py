@@ -12,7 +12,7 @@ from app.services.prompt_service import PromptService
 def test_prompt_file_exists_and_loads():
     service = PromptService()
     assert len(service.base_prompt) > 400
-    assert "Gethu" in service.base_prompt
+    assert "{name}" in service.base_prompt  # name is injected at request time
 
 
 def test_tanglish_rules_are_present():
@@ -40,7 +40,41 @@ def test_mode_directives_appear_in_system_prompt():
     for mode in ("friendly", "respectful", "playful", "supportive", "focused"):
         prompt = service.system_prompt(mode)
         assert f"MODE: {mode}" in prompt
-        assert service.base_prompt in prompt
+        # The base prompt is included with the name substituted.
+        assert service.apply_name(service.base_prompt, None) in prompt
+
+
+def test_default_name_is_used_when_none_given():
+    service = PromptService()
+    prompt = service.system_prompt("friendly")
+    assert "You are Gethu," in prompt
+    assert "{name}" not in prompt
+
+
+def test_custom_name_replaces_the_placeholder():
+    service = PromptService()
+    prompt = service.system_prompt("friendly", "Mithu")
+    assert "You are Mithu," in prompt
+    assert "{name}" not in prompt
+    assert "Your name is Mithu." in prompt
+
+
+def test_name_is_sanitised_so_it_cannot_alter_the_prompt():
+    service = PromptService()
+    prompt = service.system_prompt("friendly", "Bad\nName {injected}")
+    assert "Bad Name (injected)" in prompt
+    # The name may not carry a brace through, so it cannot close a placeholder.
+    assert "{injected}" not in prompt
+    # The name may not carry a newline through, so it cannot start a new
+    # instruction line in the prompt.
+    safe = service.apply_name("{name}", "Bad\nName {injected}")
+    assert safe == "Bad Name (injected)"
+    assert "\n" not in safe
+
+
+def test_blank_name_falls_back_to_the_default():
+    service = PromptService()
+    assert "You are Gethu," in service.system_prompt("friendly", "   ")
 
 
 def test_unknown_mode_falls_back_to_friendly():

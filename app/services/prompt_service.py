@@ -13,6 +13,8 @@ from app.models.schemas import MODES, Mode
 
 PROMPT_FILE = Path(__file__).resolve().parent.parent / "prompts" / "companion_system_prompt.txt"
 
+DEFAULT_COMPANION_NAME = "Gethu"
+
 _MODE_DIRECTIVES: dict[str, str] = {
     "friendly": "MODE: friendly (default). Talk like a comfortable, trusted friend.",
     "respectful": (
@@ -47,7 +49,7 @@ class PromptService:
         except OSError:
             # Fallback keeps the app usable if the file is missing.
             text = (
-                "You are Gethu, a friendly personal AI companion. Reply in natural "
+                "You are {name}, a friendly personal AI companion. Reply in natural "
                 "Romanized Tanglish or English, never Tamil script by default."
             )
         return text.strip()
@@ -60,9 +62,25 @@ class PromptService:
         self._base = self._load()
         return self._base
 
-    def system_prompt(self, mode: Mode | str | None = None) -> str:
+    @staticmethod
+    def apply_name(prompt: str, name: str | None) -> str:
+        """Substitute the companion's name into the prompt template.
+
+        The name comes from the user, so it is escaped before it reaches the
+        model: a name containing braces or a newline must never be able to
+        alter the rest of the prompt.
+        """
+        safe = (name or "").strip() or DEFAULT_COMPANION_NAME
+        safe = safe.replace("{", "(").replace("}", ")")
+        safe = " ".join(safe.split())[:40]
+        return prompt.replace("{name}", safe)
+
+    def system_prompt(
+        self, mode: Mode | str | None = None, name: str | None = None
+    ) -> str:
         directive = _MODE_DIRECTIVES.get(mode or "friendly", _MODE_DIRECTIVES["friendly"])
-        return f"{self._base}\n\nCURRENT CONVERSATION MODE\n{directive}"
+        prompt = self.apply_name(self._base, name)
+        return f"{prompt}\n\nCURRENT CONVERSATION MODE\n{directive}"
 
     def valid_modes(self) -> tuple[str, ...]:
         return MODES

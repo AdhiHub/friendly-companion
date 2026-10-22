@@ -40,7 +40,7 @@ def test_chat_requires_api_key(tmp_path):
         response = client.post("/api/chat", json={"message": "hello"})
         assert response.status_code == 503
         assert response.json()["kind"] == "missing_key"
-        assert "GEMINI_API_KEY" in response.json()["detail"]
+        assert "Settings" in response.json()["detail"]
 
 
 def test_streaming_chat_emits_meta_delta_done(client: TestClient, fake_gemini: FakeGemini, read_sse):

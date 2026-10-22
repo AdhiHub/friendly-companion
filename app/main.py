@@ -17,6 +17,7 @@ from app.database.repository import Repository
 from app.services.attachment_service import AttachmentError, AttachmentService
 from app.services.conversation_service import ChatError, ChatService
 from app.services.gemini_service import GeminiError, GeminiService
+from app.services.key_store import KeyStore
 from app.services.prompt_service import PromptService
 from app.services.settings_service import SettingsStore
 from app.utils.logging_config import configure_logging
@@ -36,7 +37,7 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
     @asynccontextmanager
     async def lifespan(app: FastAPI):
         logger.info("Gethu starting (model=%s, key=%s)", config.model,
-                    "set" if config.configured else "MISSING")
+                    "set" if key_store.configured else "MISSING")
         yield
         db = getattr(app.state, "db", None)
         if db is not None:
@@ -46,7 +47,8 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
 
     db = Database(config.db_path)
     repo = Repository(db)
-    gemini = GeminiService(config)
+    key_store = KeyStore(config.api_key, config.env_file)
+    gemini = GeminiService(config, key_store)
     attachment_service = AttachmentService(config)
 
     app.state.config = config
@@ -54,6 +56,7 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
     app.state.repo = repo
     app.state.gemini = gemini
     app.state.attachment_service = attachment_service
+    app.state.key_store = key_store
     app.state.settings_store = SettingsStore(config)
     app.state.prompt_service = PromptService()
     app.state.chat_service = ChatService(
@@ -62,6 +65,7 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
         gemini=gemini,
         attachments=attachment_service,
         history_limit=config.max_history_messages,
+        settings=app.state.settings_store,
     )
 
     # -- error handling ----------------------------------------------------
@@ -92,8 +96,9 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
     async def health() -> dict:
         return {
             "status": "ok",
-            "api_key_configured": config.configured,
+            "api_key_configured": key_store.configured,
             "model": app.state.settings_store.model or config.model,
+            "companion_name": app.state.settings_store.companion_name,
             "version": VERSION,
         }
 

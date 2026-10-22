@@ -64,10 +64,28 @@ class SettingsOut(BaseModel):
     available_models: list[str]
     max_upload_mb: int
     modes: list[str]
+    companion_name: str
+    setup_complete: bool
 
 
 class SettingsPatch(BaseModel):
     model: str | None = Field(default=None, max_length=100)
+    # Accepted longer than the stored limit on purpose: the server truncates
+    # rather than rejecting, so a pasted name never produces an opaque 422.
+    companion_name: str | None = Field(default=None, max_length=200)
+
+
+class ApiKeyIn(BaseModel):
+    """A Gemini API key supplied through the web setup screen."""
+
+    api_key: str = Field(min_length=1, max_length=200)
+
+
+class ApiKeyOut(BaseModel):
+    ok: bool
+    api_key_configured: bool
+    companion_name: str
+    message: str
 
 
 class HealthOut(BaseModel):

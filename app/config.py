@@ -45,6 +45,7 @@ class AppConfig:
     log_level: str = "INFO"
     data_dir: Path = field(default_factory=lambda: DATA_DIR)
     uploads_dir: Path = field(default_factory=lambda: UPLOADS_DIR)
+    env_file: Path = field(default_factory=lambda: ROOT_DIR / ".env")
 
     @property
     def db_path(self) -> Path:
@@ -72,7 +73,8 @@ class AppConfig:
 
 
 def load_config(env_file: Path | None = None) -> AppConfig:
-    load_dotenv(env_file or ROOT_DIR / ".env", override=False)
+    env_path = Path(env_file) if env_file else ROOT_DIR / ".env"
+    load_dotenv(env_path, override=False)
 
     api_key = os.environ.get("GEMINI_API_KEY", "").strip() or None
     model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
@@ -90,6 +92,7 @@ def load_config(env_file: Path | None = None) -> AppConfig:
         max_upload_mb=_int_env("MAX_UPLOAD_MB", 20, 1, 100),
         max_history_messages=_int_env("MAX_HISTORY_MESSAGES", 40, 2, 500),
         log_level=log_level,
+        env_file=env_path,
     )
     config.data_dir.mkdir(parents=True, exist_ok=True)
     config.uploads_dir.mkdir(parents=True, exist_ok=True)

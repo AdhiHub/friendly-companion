@@ -16,7 +16,7 @@ from app.database.repository import Repository
 from app.models.schemas import MODES, AttachmentInfo, ChatRequest, ConversationOut
 from app.services.attachment_service import AttachmentError, AttachmentService
 from app.services.gemini_service import GeminiError, GeminiService
-from app.services.prompt_service import PromptService
+from app.services.prompt_service import DEFAULT_COMPANION_NAME, PromptService
 from app.utils.validation import new_id
 
 logger = logging.getLogger("gethu.chat")
@@ -43,12 +43,25 @@ class ChatService:
         gemini: GeminiService,
         attachments: AttachmentService,
         history_limit: int = 40,
+        settings: Any = None,
     ) -> None:
         self.repo = repo
         self.prompts = prompts
         self.gemini = gemini
         self.attachments = attachments
         self.history_limit = history_limit
+        self.settings = settings
+
+    @property
+    def companion_name(self) -> str:
+        """The name the user gave the character (default: Gethu)."""
+        store = self.settings
+        if store is None:
+            return DEFAULT_COMPANION_NAME
+        try:
+            return store.companion_name
+        except Exception:  # noqa: BLE001 - never break a chat over a name
+            return DEFAULT_COMPANION_NAME
 
     def prepare(self, request: ChatRequest) -> dict[str, Any]:
         """Resolve conversation, validate attachments, persist the user turn.
@@ -74,7 +87,7 @@ class ChatService:
             attachment_parts,
             limit=self.history_limit,
         )
-        system = self.prompts.system_prompt(mode)
+        system = self.prompts.system_prompt(mode, self.companion_name)
 
         user_msg = self.repo.add_message(
             conversation.id, "user", request.message, attachment_infos

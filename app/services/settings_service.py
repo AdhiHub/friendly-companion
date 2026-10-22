@@ -8,10 +8,13 @@ import threading
 from typing import Any
 
 from app.config import AppConfig
+from app.services.prompt_service import DEFAULT_COMPANION_NAME
 
 logger = logging.getLogger("gethu.settings")
 
-_ALLOWED_KEYS = {"model"}
+_ALLOWED_KEYS = {"model", "companion_name"}
+
+MAX_NAME_LENGTH = 40
 
 
 class SettingsStore:
@@ -53,3 +56,10 @@ class SettingsStore:
     def model(self) -> str | None:
         value = self.get("model")
         return str(value) if value else None
+
+    @property
+    def companion_name(self) -> str:
+        """The name the user gave the character. Never blank."""
+        value = self.get("companion_name")
+        name = " ".join(str(value).split()) if value else ""
+        return name[:MAX_NAME_LENGTH] or DEFAULT_COMPANION_NAME

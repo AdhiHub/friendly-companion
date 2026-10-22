@@ -28,7 +28,7 @@ async def chat(payload: ChatRequest, request: Request) -> StreamingResponse:
     service = _chat_service(request)
     if not service.gemini.available:
         raise ChatError(
-            "GEMINI_API_KEY is not configured. Copy .env.example to .env and add your key.",
+            "No Gemini API key yet. Open Settings and paste your key to get started.",
             status=503,
             kind="missing_key",
         )

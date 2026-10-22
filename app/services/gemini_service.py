@@ -13,6 +13,7 @@ from collections.abc import AsyncIterator
 from typing import Any
 
 from app.config import AppConfig
+from app.services.key_store import KeyStore
 
 logger = logging.getLogger("gethu.gemini")
 
@@ -78,30 +79,61 @@ def _is_model_problem(exc: BaseException) -> bool:
 class GeminiService:
     """Streams assistant replies from Gemini with failover across model names."""
 
-    def __init__(self, config: AppConfig) -> None:
+    def __init__(self, config: AppConfig, keys: "KeyStore | None" = None) -> None:
         self.config = config
+        self.keys = keys
         self._client: Any = None
 
     # -- client ------------------------------------------------------------
     @property
+    def api_key(self) -> str | None:
+        """The active key: the runtime store wins over the startup config."""
+        if self.keys is not None:
+            return self.keys.key
+        return self.config.api_key
+
+    @property
     def available(self) -> bool:
-        return bool(self.config.api_key)
+        return bool(self.api_key)
 
     def _get_client(self) -> Any:
         if self._client is None:
-            if not self.config.api_key:
+            key = self.api_key
+            if not key:
                 raise GeminiError(
-                    "GEMINI_API_KEY is not set. Copy .env.example to .env and add your key.",
+                    "GEMINI_API_KEY is not set. Add your key in Settings, or copy "
+                    ".env.example to .env and add it there.",
                     kind="missing_key",
                 )
             from google import genai  # imported lazily so tests never need the SDK
 
-            self._client = genai.Client(api_key=self.config.api_key)
+            self._client = genai.Client(api_key=key)
         return self._client
 
     def reset(self) -> None:
-        """Drop the cached client (used when settings change)."""
+        """Drop the cached client (used when the key or settings change)."""
         self._client = None
+
+    async def verify_key(self, key: str) -> tuple[bool, str]:
+        """Check a key against Gemini. Returns (ok, message).
+
+        Used by the web setup screen so a mistyped key is reported straight
+        away rather than at the first reply. Never raises.
+        """
+        from google import genai
+
+        try:
+            client = genai.Client(api_key=key)
+            await client.aio.models.list()
+        except Exception as exc:  # noqa: BLE001 - normalised into a message
+            error = _classify(exc)
+            if error.kind == "auth":
+                return False, "Gemini rejected that key. Copy it again from AI Studio."
+            if error.kind in {"network", "rate_limit", "provider"}:
+                # The key may well be fine - we could not reach Gemini to check.
+                return True, "Key saved (could not verify it just now)."
+            return False, error.message
+        return True, "API key verified."
 
     # -- streaming ---------------------------------------------------------
     async def stream_reply(
