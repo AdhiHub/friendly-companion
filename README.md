@@ -61,6 +61,7 @@ Gethu: Naan super-ah irukken! Nee epdi irukka? Innaiku day epdi pogudhu?
 - **5 modes:** Friendly, Respectful, Playful, Supportive, Focused
 - **Remembers context** within a conversation
 - Auto-trims history so it never gets bloated
+- **Give it a name** — yours or keep "Gethu"
 
 ### 🎙️ Voice — all free
 - **Speech input** via your browser
@@ -87,6 +88,7 @@ Gethu: Naan super-ah irukken! Nee epdi irukka? Innaiku day epdi pogudhu?
 - Clean **dark theme** (true black), plus light mode
 - Responsive — works on mobile too
 - Markdown, code blocks, copy buttons
+- **Browser-based setup** — paste your API key in the welcome screen
 
 </td>
 </tr>
@@ -118,7 +120,9 @@ Pick your system. Both take about **3 minutes**.
 > ```powershell
 > .\setup.ps1 ; .\run.ps1                       # Windows
 > ```
-> Then just add your API key when prompted. Prefer to see each step? Read on.
+> Then open <http://127.0.0.1:8000> — a **welcome screen** opens and asks for your
+> API key and the name you want to give your companion. That's it, no file
+> editing needed. Prefer to see each step? Read on.
 >
 > **What it checks for you** — Python 3.11+ (and tells you your version if it's
 > too old), the `venv` module, your internet connection, free disk space, and
@@ -143,7 +147,11 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**3. Add your free API key**
+**3. Add your free API key** — either way works:
+
+*In the browser (easiest):* run the app and paste your key into the welcome screen.
+
+*In the file:*
 ```bash
 cp .env.example .env
 nano .env        # or: gedit .env
@@ -156,6 +164,9 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 **5. Open** → <http://127.0.0.1:8000>
+
+> The browser opens by itself. If the welcome screen asks for your key, paste
+> it there — Gethu writes it to `.env` for you, so it survives a restart.
 
 </details>
 
@@ -187,7 +198,11 @@ pip install -r requirements.txt
 > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 > ```
 
-**3. Add your free API key**
+**3. Add your free API key** — either way works:
+
+*In the browser (easiest):* run the app and paste your key into the welcome screen.
+
+*In the file:*
 ```powershell
 Copy-Item .env.example .env
 notepad .env
@@ -200,6 +215,9 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 **5. Open** → <http://127.0.0.1:8000>
+
+> The browser opens by itself. If the welcome screen asks for your key, paste
+> it there — Gethu writes it to `.env` for you, so it survives a restart.
 
 </details>
 
@@ -220,20 +238,34 @@ No `git` installed? That's fine:
 1. Go to **<https://aistudio.google.com/apikey>**
 2. Sign in with a Google account
 3. Click **Create API key**
-4. Copy it into your `.env` file
+4. Copy it into the **welcome screen** in the browser, or into your `.env` file
+   after `GEMINI_API_KEY=`
 
 The **free tier is plenty** to get started. You do not need to enter a credit card.
+
+### 🙋 Name your companion
+
+The first time Gethu opens it asks one question: **"What should I call you?"**
+
+- Keep **Gethu** — that is the default
+- Type any name you like — it is used everywhere: the sidebar, the chat
+  header, the message labels, and inside the AI's own system prompt (so the
+  model actually introduces itself by that name)
+- Change it later in **Settings → Companion → Name**
+
+The name is stored in `data/app_settings.json` on your machine.
 
 ### ✅ Did it work?
 
 Open <http://127.0.0.1:8000/api/health>. You should see:
 
 ```json
-{"status":"ok","api_key_configured":true,"model":"gemini-3.5-flash","version":"0.1.0"}
+{"status":"ok","api_key_configured":true,"model":"gemini-3.5-flash","companion_name":"Gethu","version":"0.1.0"}
 ```
 
-`api_key_configured: true` means you're ready. If it says `false`, your `.env` isn't
-being read — check the key is on the `GEMINI_API_KEY=` line with no quotes.
+`api_key_configured: true` means you're ready. If it says `false`, your `.env`
+isn't being read — check the key is on the `GEMINI_API_KEY=` line with no
+quotes, or just paste it into the welcome screen.
 
 ---
 
@@ -310,20 +342,30 @@ Everything lives in `.env` — the **only** file with secrets, and it's gitignor
 | `MAX_HISTORY_MESSAGES` | `40` | Context window per request. |
 | `LOG_LEVEL` | `INFO` | `DEBUG`/`INFO`/`WARNING`/`ERROR`. |
 
+The key can be set **either** way, and the app remembers which one you used:
+
+- Paste it into the **welcome screen** or **Settings → Connection** — Gethu
+  writes it into `.env` for you (mode `600`, owner-only).
+- Edit `.env` by hand — it is read at startup.
+
 **Model not working?** Availability changes over time. The app automatically falls
 back through the fallback list, and you can pick another in **Settings → Model**.
+
+**Your companion's name** and the chosen model live in
+`data/app_settings.json` (not a secret, also gitignored). Delete that file to
+go back to the defaults.
 
 ---
 
 ## 🧪 Testing
 
 ```bash
-pytest                                   # 70 backend tests
+pytest                                   # 103 backend tests
 ruff check app tests                     # lint
-node --test "tests/frontend/*.test.mjs"  # 56 frontend tests
+node --test "tests/frontend/*.test.mjs"  # 70 frontend tests
 ```
 
-**126 tests total.** Frontend tests need Node 18+ and mock the browser speech APIs,
+**173 tests total.** Frontend tests need Node 18+ and mock the browser speech APIs,
 so no microphone, speaker, or API key is required.
 
 ---
@@ -339,11 +381,12 @@ gethu-companion/
 │   │   ├── chat.py                 POST /api/chat → SSE stream
 │   │   ├── conversations.py        history CRUD
 │   │   ├── attachments.py          upload / download / delete
-│   │   └── settings.py             non-secret settings
+│   │   └── settings.py             non-secret settings + API key setup
 │   ├── services/
 │   │   ├── gemini_service.py       streaming, bounded retries, model failover
 │   │   ├── conversation_service.py orchestration + SSE events
 │   │   ├── prompt_service.py       system prompt, modes, history trimming
+│   │   ├── key_store.py            runtime API key + .env persistence
 │   │   ├── attachment_service.py   content sniffing, safe storage
 │   │   └── settings_service.py     persisted preferences
 │   ├── database/                   SQLite connection + repository
@@ -353,7 +396,8 @@ gethu-companion/
 │   └── static/
 │       ├── index.html
 │       ├── css/styles.css
-│       ├── js/                     app, api, chat, voice, settings, markdown
+│       ├── js/                     app, api, chat, voice, settings, markdown,
+│       │                           companion (name), welcome (first-run setup)
 │       └── vendor/                 marked, DOMPurify, lucide (local, no CDN)
 ├── tests/                          pytest + tests/frontend (node --test)
 ├── data/                           runtime DB + uploads (gitignored)
@@ -380,7 +424,12 @@ gethu-companion/
 ## 🔒 Security & privacy
 
 - API key lives **only** in `.env`, never reaches the browser, never gets logged
-  (a redacting filter scrubs anything key-shaped).
+  (a redacting filter scrubs anything key-shaped). `.env` is written `600`
+  (owner-only) when the browser saves a key.
+- A key pasted into the browser is **verified against Gemini before it is
+  stored** — and a rejected key never replaces a working one.
+- The API-key endpoint only accepts **JSON**, so a random web page cannot
+  submit a form to your local server to change your key.
 - `.env`, the database, and uploads are **all gitignored**.
 - Uploads are validated by **magic bytes**, size-limited, and stored under generated
   names inside one directory — path traversal is blocked.
@@ -397,15 +446,17 @@ gethu-companion/
 
 | Problem | Fix |
 |---|---|
-| **`api_key_configured: false`** | Check `.env` exists and `GEMINI_API_KEY=` has your key, no quotes. |
-| **"No API key" in the UI** | Same as above — restart the server after editing `.env`. |
+| **`api_key_configured: false`** | Paste the key into the welcome screen, or check `.env` has `GEMINI_API_KEY=` with your key, no quotes. |
+| **"No API key" in the UI** | The welcome screen should have opened — reopen it with **Settings → Companion → Open setup**. |
+| **Key rejected on setup** | Copy it again from AI Studio. A key that Gemini rejects is never stored, so your old key stays. |
+| **Name won't change** | The name is saved server-side — it updates in the sidebar and the chat header immediately. |
 | **Mic button greyed out** | Browser has no speech recognition (Firefox). Use Chrome, Edge or Brave. |
 | **Mic does nothing on Brave** | Lower Shields for the site (lion icon → down) and reload. |
 | **Gethu replies but is silent** | Install voices: `sudo apt install speech-dispatcher espeak-ng`, then restart the browser. |
 | **"needs HTTPS or localhost"** | Open `http://127.0.0.1:8000`, not a LAN IP. |
 | **"Microphone permission was blocked"** | Allow the mic in the address-bar padlock menu, reload. |
 | **Replies error out** | Try another model in **Settings → Model**. |
-| **`ensurepip` error on Linux** | `sudo apt install python3-venv` then retry — `./setup.sh` detects this for you. |
+| **`ensurepip` error on Linux** | `sudo apt install python3-venv python3.12-venv` then retry — `./setup.sh` detects this for you. |
 | **Old version loading after edits** | Hard-reload: `Ctrl + Shift + R`. |
 | **Port 8000 already in use** | `GETHU_PORT=8001 ./run.sh` — `./setup.sh` checks this up front. |
 

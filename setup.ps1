@@ -53,13 +53,18 @@ if ($py) {
     exit 1
 }
 
-# 2. venv module ------------------------------------------------------------
+# 2. venv + ensurepip --------------------------------------------------------
+$venvOk = $false
 try {
-    & $py -c "import venv" 2>$null
-    if ($LASTEXITCODE -eq 0) { Ok "Python venv module" }
-    else { Bad "Python venv module is missing - reinstall Python from python.org."; exit 1 }
-} catch {
-    Bad "Python venv module is missing - reinstall Python from python.org."
+    & $py -c "import venv, ensurepip" 2>$null
+    if ($LASTEXITCODE -eq 0) { $venvOk = $true }
+} catch { }
+
+if ($venvOk) {
+    Ok "Python venv + ensurepip"
+} else {
+    Bad "Python cannot create virtual environments."
+    Write-Host "  Reinstall Python from https://www.python.org/downloads/ (tick 'Add Python to PATH') and retry."
     exit 1
 }
 
@@ -152,13 +157,17 @@ Write-Host ""
 $keyLine = Select-String -Path .env -Pattern '^GEMINI_API_KEY=.+' -ErrorAction SilentlyContinue
 
 if (-not $keyLine) {
-    Write-Host "Almost there - one step left: add your free Gemini API key." -ForegroundColor Yellow
+    Write-Host "One step left - add your free Gemini API key." -ForegroundColor Yellow
     Write-Host ""
-    Write-Host "  1. Get a key:  https://aistudio.google.com/apikey"
-    Write-Host "  2. Open .env:  notepad .env"
-    Write-Host "  3. Put it on the line:  GEMINI_API_KEY=your_key_here"
+    Write-Host "  Easiest: start Gethu and paste it in the browser." -ForegroundColor White
+    Write-Host "    .\run.ps1  ->  the welcome screen asks for it."
     Write-Host ""
-    Write-Host "  Then start Gethu:  .\run.ps1"
+    Write-Host "  Or set it in the file now:"
+    Write-Host "    Get a key:  https://aistudio.google.com/apikey"
+    Write-Host "    Edit file:  notepad .env"
+    Write-Host "    Add line:   GEMINI_API_KEY=your_key_here"
+    Write-Host ""
+    Write-Host "  Both work - the browser writes the key to .env for you." -ForegroundColor DarkGray
 } else {
     Ok "API key detected"
     Write-Host ""

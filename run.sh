@@ -61,4 +61,13 @@ echo ""
 echo "  ${DIM}If the browser shows an old version, press Ctrl + Shift + R.${RESET}"
 echo ""
 
+# Open the browser automatically so setup can be finished in the web UI.
+if [ "${GETHU_NO_BROWSER:-0}" != "1" ]; then
+  if command -v xdg-open >/dev/null 2>&1; then
+    ( sleep 2; xdg-open "http://${HOST}:${PORT}" >/dev/null 2>&1 & ) || true
+  elif command -v open >/dev/null 2>&1; then
+    ( sleep 2; open "http://${HOST}:${PORT}" >/dev/null 2>&1 & ) || true
+  fi
+fi
+
 exec uvicorn app.main:app --host "$HOST" --port "$PORT"

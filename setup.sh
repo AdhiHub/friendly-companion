@@ -65,14 +65,21 @@ else
   exit 1
 fi
 
-# 3. venv module ------------------------------------------------------------
-if "$PY" -c 'import venv' 2>/dev/null; then
-  ok "Python venv module"
+# 3. venv + ensurepip -------------------------------------------------------
+# `import venv` alone is not enough: on Debian/Ubuntu the venv module exists
+# but ensurepip is packaged separately (python3-venv), so creating the
+# environment still fails halfway through. Test both.
+PY_MM="$("$PY" -c 'import sys; print("%d.%d" % sys.version_info[:2])' 2>/dev/null)"
+if "$PY" -c 'import venv, ensurepip' 2>/dev/null; then
+  ok "Python venv + ensurepip"
 else
-  bad "Python venv module is missing."
-  note "Install it, then run this script again:
-     Debian/Ubuntu:  sudo apt install python3-venv
-     Fedora:         sudo dnf install python3-libs"
+  bad "Python cannot create virtual environments (\`ensurepip\` is missing)."
+  note "This is the usual cause of a 'Could not create a virtual environment' error.
+     Install the matching package, then run this script again:
+     Debian/Ubuntu:  sudo apt install python3-venv python${PY_MM}-venv
+     Fedora:         sudo dnf install python3-libs
+     Arch:           sudo pacman -S python
+     macOS:          brew install python"
 fi
 
 # 4. Internet ---------------------------------------------------------------
@@ -139,11 +146,19 @@ if [ -d .venv ]; then
   ok "Reusing existing .venv"
 else
   if ! "$PY" -m venv .venv 2>/dev/null; then
+    # Most common cause by far: python3-venv / pythonX.Y-venv not installed,
+    # so ensurepip is missing and the environment is created without pip.
     bad "Could not create a virtual environment."
     say ""
-    say "  Debian/Ubuntu:  sudo apt install python3-venv"
-    say "  Fedora:         sudo dnf install python3-libs"
+    say "  This usually means the venv support package is missing."
+    say "  Install it, then run ./setup.sh again:"
     say ""
+    say "    Debian/Ubuntu:  sudo apt install python3-venv python${PY_MM}-venv"
+    say "    Fedora:         sudo dnf install python3-libs"
+    say "    Arch:           sudo pacman -S python"
+    say "    macOS:          brew install python"
+    say ""
+    rm -rf .venv
     exit 1
   fi
   ok "Created .venv"
@@ -180,13 +195,17 @@ if grep -qE '^GEMINI_API_KEY=.+' .env 2>/dev/null; then
 fi
 
 if [ "$NEED_KEY" -eq 1 ]; then
-  say "${BOLD}${YELLOW}Almost there — one step left: add your free Gemini API key.${RESET}"
+  say "${BOLD}${YELLOW}One step left — add your free Gemini API key.${RESET}"
   say ""
-  say "  1. Get a key:  ${BOLD}https://aistudio.google.com/apikey${RESET}"
-  say "  2. Open .env:  ${BOLD}${EDITOR:-nano} .env${RESET}"
-  say "  3. Put it on the line:  ${BOLD}GEMINI_API_KEY=your_key_here${RESET}"
+  say "  ${BOLD}Easiest:${RESET} start Gethu and paste it in the browser."
+  say "    ${BOLD}./run.sh${RESET}  →  the welcome screen asks for it."
   say ""
-  say "  Then start Gethu:  ${BOLD}./run.sh${RESET}"
+  say "  ${BOLD}Or set it in the file now:${RESET}"
+  say "    Get a key:  ${BOLD}https://aistudio.google.com/apikey${RESET}"
+  say "    Edit file: ${BOLD}${EDITOR:-nano} .env${RESET}"
+  say "    Add line:  ${BOLD}GEMINI_API_KEY=your_key_here${RESET}"
+  say ""
+  say "  ${DIM}Both work — the browser writes the key to .env for you.${RESET}"
 else
   ok "API key detected"
   say ""

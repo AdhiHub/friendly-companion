@@ -56,4 +56,9 @@ Write-Host ""
 Write-Host "  If the browser shows an old version, press Ctrl + Shift + R." -ForegroundColor DarkGray
 Write-Host ""
 
+# Open the browser automatically so setup can be finished in the web UI.
+if ($env:GETHU_NO_BROWSER -ne '1') {
+    try { Start-Process "http://${host_}:${port}" } catch { }
+}
+
 & .\.venv\Scripts\python.exe -m uvicorn app.main:app --host $host_ --port $port
