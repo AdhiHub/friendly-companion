@@ -340,6 +340,7 @@ Everything lives in `.env` — the **only** file with secrets, and it's gitignor
 | `GETHU_PORT` | `8000` | Port. |
 | `MAX_UPLOAD_MB` | `20` | Attachment size cap. |
 | `MAX_HISTORY_MESSAGES` | `40` | Context window per request. |
+| `GEMINI_TIMEOUT` | `45` | Seconds to wait for a model before moving to the next one. |
 | `LOG_LEVEL` | `INFO` | `DEBUG`/`INFO`/`WARNING`/`ERROR`. |
 
 The key can be set **either** way, and the app remembers which one you used:
@@ -348,8 +349,10 @@ The key can be set **either** way, and the app remembers which one you used:
   writes it into `.env` for you (mode `600`, owner-only).
 - Edit `.env` by hand — it is read at startup.
 
-**Model not working?** Availability changes over time. The app automatically falls
-back through the fallback list, and you can pick another in **Settings → Model**.
+**Model not working?** Availability changes over time. If the model you picked
+is busy, overloaded or silently hanging, Gethu moves to the next one in the
+fallback list by itself — a rate limit is retried, a busy model is skipped.
+You can also pick another model in **Settings → Model**.
 
 **Your companion's name** and the chosen model live in
 `data/app_settings.json` (not a secret, also gitignored). Delete that file to
@@ -360,12 +363,12 @@ go back to the defaults.
 ## 🧪 Testing
 
 ```bash
-pytest                                   # 103 backend tests
+pytest                                   # 114 backend tests
 ruff check app tests                     # lint
 node --test "tests/frontend/*.test.mjs"  # 70 frontend tests
 ```
 
-**173 tests total.** Frontend tests need Node 18+ and mock the browser speech APIs,
+**184 tests total.** Frontend tests need Node 18+ and mock the browser speech APIs,
 so no microphone, speaker, or API key is required.
 
 ---
@@ -383,7 +386,7 @@ gethu-companion/
 │   │   ├── attachments.py          upload / download / delete
 │   │   └── settings.py             non-secret settings + API key setup
 │   ├── services/
-│   │   ├── gemini_service.py       streaming, bounded retries, model failover
+│   │   ├── gemini_service.py       streaming, retries, timeouts, model failover
 │   │   ├── conversation_service.py orchestration + SSE events
 │   │   ├── prompt_service.py       system prompt, modes, history trimming
 │   │   ├── key_store.py            runtime API key + .env persistence
@@ -456,6 +459,7 @@ gethu-companion/
 | **"needs HTTPS or localhost"** | Open `http://127.0.0.1:8000`, not a LAN IP. |
 | **"Microphone permission was blocked"** | Allow the mic in the address-bar padlock menu, reload. |
 | **Replies error out** | Try another model in **Settings → Model**. |
+| **"Gemini took too long to respond"** | That model was silent for `GEMINI_TIMEOUT` seconds. Gethu already tried the next model — raise the timeout in `.env` if you prefer to wait longer. |
 | **`ensurepip` error on Linux** | `sudo apt install python3-venv python3.12-venv` then retry — `./setup.sh` detects this for you. |
 | **Old version loading after edits** | Hard-reload: `Ctrl + Shift + R`. |
 | **Port 8000 already in use** | `GETHU_PORT=8001 ./run.sh` — `./setup.sh` checks this up front. |

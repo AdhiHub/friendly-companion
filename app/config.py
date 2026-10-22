@@ -33,6 +33,15 @@ def _int_env(name: str, default: int, minimum: int, maximum: int) -> int:
     return max(minimum, min(maximum, value))
 
 
+def _float_env(name: str, default: float, minimum: float, maximum: float) -> float:
+    raw = os.environ.get(name, "").strip()
+    try:
+        value = float(raw) if raw else default
+    except ValueError:
+        value = default
+    return max(minimum, min(maximum, value))
+
+
 @dataclass(frozen=True)
 class AppConfig:
     api_key: str | None = None
@@ -42,6 +51,7 @@ class AppConfig:
     port: int = 8000
     max_upload_mb: int = 20
     max_history_messages: int = 40
+    stream_timeout: float = 45.0
     log_level: str = "INFO"
     data_dir: Path = field(default_factory=lambda: DATA_DIR)
     uploads_dir: Path = field(default_factory=lambda: UPLOADS_DIR)
@@ -91,6 +101,7 @@ def load_config(env_file: Path | None = None) -> AppConfig:
         port=_int_env("GETHU_PORT", 8000, 1, 65535),
         max_upload_mb=_int_env("MAX_UPLOAD_MB", 20, 1, 100),
         max_history_messages=_int_env("MAX_HISTORY_MESSAGES", 40, 2, 500),
+        stream_timeout=_float_env("GEMINI_TIMEOUT", 45.0, 5.0, 600.0),
         log_level=log_level,
         env_file=env_path,
     )

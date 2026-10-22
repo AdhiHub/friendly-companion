@@ -76,6 +76,73 @@ def _is_model_problem(exc: BaseException) -> bool:
     return status == 404 or ("model" in text and ("not found" in text or "invalid" in text))
 
 
+def _is_rate_limit(exc: BaseException) -> bool:
+    """429 / RESOURCE_EXHAUSTED — waiting for the same model can help."""
+    if _status_code(exc) == 429:
+        return True
+    return "resourceexhausted" in type(exc).__name__.lower()
+
+
+def _is_network_problem(exc: BaseException) -> bool:
+    """A dropped connection clears on its own, so the same model can retry."""
+    if isinstance(exc, (asyncio.TimeoutError, TimeoutError, ConnectionError)):
+        return True
+    text = str(exc).lower()
+    name = type(exc).__name__.lower()
+    return (
+        "unreachable" in text
+        or "connection" in text
+        or "deadline" in name
+        or "timeout" in name
+    )
+
+
+def _can_fail_over(error: GeminiError) -> bool:
+    """True when trying the next configured model could plausibly help.
+
+    Authentication is excluded: every model uses the same key, so a different
+    model would fail in exactly the same way.
+    """
+    return error.kind != "auth"
+
+
+def _next_action(
+    exc: BaseException,
+    error: GeminiError,
+    attempt: int,
+    has_next_model: bool,
+    can_retry: bool = True,
+) -> str:
+    """Decide what to do after a failed attempt.
+
+    Returns ``"retry"`` (same model again), ``"next_model"`` or ``"raise"``.
+
+    ``can_retry`` is false once text has been shown to the user: asking again
+    would send the partial reply twice, and switching models would mix two
+    different answers together.
+    """
+    if not can_retry:
+        return "raise"
+    # A model that opens a stream and then goes silent is unresponsive.
+    # Waiting for it again only doubles the wait, so switch straight away.
+    if isinstance(exc, (asyncio.TimeoutError, TimeoutError)):
+        if has_next_model and _can_fail_over(error):
+            return "next_model"
+        return "raise"
+    # A rate limit or a network hiccup clears on its own: wait and retry the
+    # very same model.
+    if (_is_rate_limit(exc) or _is_network_problem(exc)) and attempt < 2:
+        return "retry"
+    # A 5xx means *that* model is busy or overloaded. A different model is
+    # free, so switch instead of waiting.
+    if has_next_model and _can_fail_over(error):
+        return "next_model"
+    # Nowhere else to go: keep retrying the same model if that could help.
+    if _is_retryable(exc) and attempt < 2:
+        return "retry"
+    return "raise"
+
+
 class GeminiService:
     """Streams assistant replies from Gemini with failover across model names."""
 
@@ -155,6 +222,7 @@ class GeminiService:
 
         for index, model_name in enumerate(candidates):
             attempt = 0
+            has_next = index < len(candidates) - 1
             while attempt < 3:
                 try:
                     stream = await self._open_stream(client, model_name, system, contents)
@@ -164,17 +232,27 @@ class GeminiService:
                     )
                     error = _classify(exc)
                     last_error = error
-                    if _is_model_problem(exc) and index < len(candidates) - 1:
-                        break  # try the next configured model
-                    if _is_retryable(exc) and attempt < 2:
+                    action = _next_action(exc, error, attempt, has_next)
+                    if action == "retry":
                         attempt += 1
                         await asyncio.sleep(self._backoff(attempt))
                         continue
+                    if action == "next_model":
+                        break  # try the next configured model
                     raise error from exc
 
                 yielded = False
+                iterator = stream.__aiter__()
                 try:
-                    async for chunk in stream:
+                    while True:
+                        try:
+                            # A stream can open and then go silent forever
+                            # (a busy model does exactly that). Without this
+                            # the request would hang until the user gives up.
+                            async with asyncio.timeout(self.config.stream_timeout):
+                                chunk = await iterator.__anext__()
+                        except StopAsyncIteration:
+                            break
                         text = self._chunk_text(chunk)
                         if not text:
                             continue  # thinking / non-text part — never yield objects
@@ -190,10 +268,19 @@ class GeminiService:
                     )
                     error = _classify(exc)
                     last_error = error
-                    if not yielded and _is_retryable(exc) and attempt < 2:
+                    # Nothing was sent to the user yet, so a different model
+                    # can still answer cleanly. Once text has been yielded we
+                    # must not switch or retry: the reply would be a mix of
+                    # two models, or the partial text would be sent twice.
+                    action = _next_action(
+                        exc, error, attempt, has_next_model=has_next, can_retry=not yielded
+                    )
+                    if action == "retry":
                         attempt += 1
                         await asyncio.sleep(self._backoff(attempt))
                         continue
+                    if action == "next_model":
+                        break
                     raise error from exc
 
         raise last_error or GeminiError("Gemini returned no response.", kind="provider")
