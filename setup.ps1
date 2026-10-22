@@ -1,5 +1,5 @@
 # Gethu one-command setup for Windows (PowerShell).
-# Checks everything first, then creates a virtual environment, installs 
+# Checks everything first, then creates a virtual environment, installs
 # dependencies and prepares .env.
 
 $ErrorActionPreference = 'Stop'

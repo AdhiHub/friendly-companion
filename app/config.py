@@ -1,4 +1,4 @@
-"""Application configuration for Gethu. 
+"""Application configuration for Gethu.
 
 Reads the `.env` file and environment variables, validates them, and exposes a
 single immutable settings object. No secret is ever returned to the frontend.
