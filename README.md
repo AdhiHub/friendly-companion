@@ -182,42 +182,56 @@ py --version         # needs 3.11 or newer
 If that fails, install Python from [python.org](https://www.python.org/downloads/)
 — **tick "Add Python to PATH"** during install.
 
-**2. Get the project and set it up**
+**2. Download or clone the project**
+
+Either way works from the folder you download it into:
+
+*With Git (recommended):*
 ```powershell
 git clone https://github.com/AdhiHub/friendly-companion.git
 cd friendly-companion
+```
 
+*With a ZIP (if you don't have Git):* download the ZIP from the repo, right-click → **Extract All**, open **PowerShell** in that extracted folder (`Shift + Right-click → Open in Terminal`).
+
+**3. Allow running the scripts (one-time)**
+
+If PowerShell blocks the scripts, run this once in that folder:
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+Then retry. If you downloaded the files as a ZIP, Windows may also block them — right-click `setup.ps1` → **Properties** → check **Unblock** → **Apply**, or run:
+```powershell
+Unblock-File .\setup.ps1, .\run.ps1
+```
+
+> **Note:** If PowerShell says "running scripts is disabled", that's this step. `RemoteSigned` only affects scripts you downloaded; it won't change your system-wide policy.
+
+**4. Run it (automatic setup + start)**
+
+The easiest and recommended way — `setup.ps1` checks Python, venv, internet, disk space and port 8000, creates `.venv`, installs everything, and `run.ps1` starts the server and **opens the browser**.
+```powershell
+.\setup.ps1
+.\run.ps1
+```
+
+Or just run both at once:
+```powershell
+.\setup.ps1 ; .\run.ps1
+```
+
+If `setup.ps1` says PowerShell blocked it, use the one-time fix above. The browser will open <http://127.0.0.1:8000> and the **welcome screen** will ask for your API key. Paste it there — Friendly Companion writes it to `.env` for you.
+
+**4b. Run it manually (if you want to see each step)**
+```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-```
-
-> **PowerShell says "running scripts is disabled"?**
-> Run this once, then retry:
-> ```powershell
-> Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-> ```
-
-**3. Add your free API key** — either way works:
-
-*In the browser (easiest):* run the app and paste your key into the welcome screen.
-
-*In the file:*
-```powershell
 Copy-Item .env.example .env
-notepad .env
-```
-Paste your key after `GEMINI_API_KEY=`
-
-**4. Run it**
-```powershell
+notepad .env        # paste your GEMINI_API_KEY=
 uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
-
-**5. Open** → <http://127.0.0.1:8000>
-
-> The browser opens by itself. If the welcome screen asks for your key, paste
-> it there — Friendly Companion writes it to `.env` for you, so it survives a restart.
+Open <http://127.0.0.1:8000> in your browser. Use **Chrome, Edge or Brave** if you want voice input to work.
 
 </details>
 
