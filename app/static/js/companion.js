@@ -5,7 +5,7 @@
  * place to read it from.
  */
 
-const DEFAULT_NAME = 'Gethu';
+const DEFAULT_NAME = 'Friendly Companion';
 
 let currentName = DEFAULT_NAME;
 

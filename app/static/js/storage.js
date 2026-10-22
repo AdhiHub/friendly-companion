@@ -1,7 +1,7 @@
 /* Local preference storage. Non-sensitive UI preferences only — never secrets,
    never microphone permission (browsers own that). */
 
-export const PREFS_KEY = 'gethu.prefs.v1';
+export const PREFS_KEY = 'companion.prefs.v1';
 
 export const DEFAULT_PREFS = {
   theme: 'dark',
@@ -16,7 +16,7 @@ export const DEFAULT_PREFS = {
 function getStorage() {
   try {
     const s = globalThis.localStorage;
-    const probe = '__gethu_probe__';
+    const probe = '__companion_probe__';
     s.setItem(probe, '1');
     s.removeItem(probe);
     return s;

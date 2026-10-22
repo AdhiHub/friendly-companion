@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <rect width="900" height="620" fill="#000000"/>
 
-  <text x="450" y="42" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Gethu — logo options</text>
+  <text x="450" y="42" fill="#ededed" font-size="21" font-weight="650" text-anchor="middle">Friendly Companion — logo options</text>
   <text x="450" y="64" fill="#6e6e6e" font-size="12" text-anchor="middle">each shown large, then at real size (32px) and favicon size (16px)</text>
 
   <!-- ============ 1. WAVEFORM ============ -->

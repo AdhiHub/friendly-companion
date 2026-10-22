@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Gethu one-command setup for Linux / macOS.
+# Friendly Companion one-command setup for Linux / macOS.
 # Checks everything first, then creates a virtual environment, installs
 # dependencies and prepares .env.
 
@@ -18,15 +18,15 @@ die()  { bad "$*"; exit 1; }
 PROBLEMS=()
 note() { PROBLEMS+=("$*"); }
 
-say "${BOLD}Gethu setup${RESET}"
+say "${BOLD}Friendly Companion setup${RESET}"
 say ""
 
 # ------------------------------------------------------------------ preflight
 say "${BOLD}Checking your system${RESET}"
 
-# 1. Is this even a Gethu checkout? ------------------------------------------
-[ -f requirements.txt ] || die "Run this from the Gethu folder (requirements.txt not found)."
-[ -f .env.example ]     || die "Run this from the Gethu folder (.env.example not found)."
+# 1. Is this even a Friendly Companion checkout? --------------------------------------
+[ -f requirements.txt ] || die "Run this from the Friendly Companion folder (requirements.txt not found)."
+[ -f .env.example ]     || die "Run this from the Friendly Companion folder (.env.example not found)."
 
 # 2. Python ---------------------------------------------------------------
 PY=""
@@ -44,7 +44,7 @@ if [ -n "$PY" ]; then
   ok "Python $("$PY" --version 2>&1 | awk '{print $2}')"
 elif [ -n "$FOUND_ANY_PYTHON" ]; then
   VER="$("$FOUND_ANY_PYTHON" --version 2>&1 | awk '{print $2}')"
-  bad "Python $VER is too old — Gethu needs 3.11 or newer."
+  bad "Python $VER is too old — Friendly Companion needs 3.11 or newer."
   note "Upgrade Python (you have $VER):
      Debian/Ubuntu:  sudo apt install python3.12 python3.12-venv
      Fedora:         sudo dnf install python3.12
@@ -108,21 +108,21 @@ if [ -n "$FREE_MB" ]; then
   if [ "$FREE_MB" -ge 500 ]; then
     ok "${FREE_MB} MB free disk space"
   else
-    bad "Only ${FREE_MB} MB free — Gethu needs about 500 MB."
+    bad "Only ${FREE_MB} MB free — Friendly Companion needs about 500 MB."
     note "Free up some space, then run this script again."
   fi
 fi
 
 # 6. Port ---------------------------------------------------------------
-PORT="${GETHU_PORT:-8000}"
+PORT="${COMPANION_PORT:-8000}"
 if command -v ss >/dev/null 2>&1 && ss -tln 2>/dev/null | grep -q ":${PORT} "; then
-  warn "Port ${PORT} is already in use — Gethu will fail to start on it."
-  note "Free the port, or start Gethu on another one:
-     GETHU_PORT=8001 ./run.sh"
+  warn "Port ${PORT} is already in use — Friendly Companion will fail to start on it."
+  note "Free the port, or start Friendly Companion on another one:
+     COMPANION_PORT=8001 ./run.sh"
 elif command -v lsof >/dev/null 2>&1 && lsof -i ":${PORT}" >/dev/null 2>&1; then
-  warn "Port ${PORT} is already in use — Gethu will fail to start on it."
-  note "Free the port, or start Gethu on another one:
-     GETHU_PORT=8001 ./run.sh"
+  warn "Port ${PORT} is already in use — Friendly Companion will fail to start on it."
+  note "Free the port, or start Friendly Companion on another one:
+     COMPANION_PORT=8001 ./run.sh"
 else
   ok "Port ${PORT} is free"
 fi
@@ -140,7 +140,7 @@ if [ ${#PROBLEMS[@]} -gt 0 ]; then
 fi
 
 # ------------------------------------------------------------------- install
-say "${BOLD}Setting up Gethu${RESET}"
+say "${BOLD}Setting up Friendly Companion${RESET}"
 
 if [ -d .venv ]; then
   ok "Reusing existing .venv"
@@ -197,7 +197,7 @@ fi
 if [ "$NEED_KEY" -eq 1 ]; then
   say "${BOLD}${YELLOW}One step left — add your free Gemini API key.${RESET}"
   say ""
-  say "  ${BOLD}Easiest:${RESET} start Gethu and paste it in the browser."
+  say "  ${BOLD}Easiest:${RESET} start Friendly Companion and paste it in the browser."
   say "    ${BOLD}./run.sh${RESET}  →  the welcome screen asks for it."
   say ""
   say "  ${BOLD}Or set it in the file now:${RESET}"
@@ -209,7 +209,7 @@ if [ "$NEED_KEY" -eq 1 ]; then
 else
   ok "API key detected"
   say ""
-  say "${GREEN}${BOLD}Gethu is ready.${RESET}  Start it with:  ${BOLD}./run.sh${RESET}"
+  say "${GREEN}${BOLD}Friendly Companion is ready.${RESET}  Start it with:  ${BOLD}./run.sh${RESET}"
 fi
 say ""
 say "${DIM}Suggested: a Chromium browser (Chrome, Edge, Brave) for voice input.${RESET}"

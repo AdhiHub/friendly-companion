@@ -1,4 +1,4 @@
-"""SQLite connection handling for the local Gethu database."""
+"""SQLite connection handling for the local Friendly Companion database."""
 
 from __future__ import annotations
 

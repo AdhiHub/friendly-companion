@@ -19,7 +19,7 @@ from app.services.gemini_service import GeminiError, GeminiService
 from app.services.prompt_service import DEFAULT_COMPANION_NAME, PromptService
 from app.utils.validation import new_id
 
-logger = logging.getLogger("gethu.chat")
+logger = logging.getLogger("companion.chat")
 
 
 class ChatError(Exception):
@@ -54,7 +54,7 @@ class ChatService:
 
     @property
     def companion_name(self) -> str:
-        """The name the user gave the character (default: Gethu)."""
+        """The name the user gave the character (default: Friendly Companion)."""
         store = self.settings
         if store is None:
             return DEFAULT_COMPANION_NAME
@@ -146,7 +146,7 @@ class ChatService:
 
         full_text = "".join(buffer)
         if not full_text.strip():
-            yield _event("error", {"message": "Gethu returned an empty reply.", "kind": "empty"})
+            yield _event("error", {"message": "Friendly Companion returned an empty reply.", "kind": "empty"})
             return
 
         assistant_msg = self.repo.add_message(

@@ -1,4 +1,4 @@
-/* Gethu UI bootstrap: sidebar, conversation list, voice input, header controls
+/* Friendly Companion UI bootstrap: sidebar, conversation list, voice input, header controls
    and wiring between the chat controller, settings and voice manager. */
 
 import { api } from './api.js';
@@ -633,7 +633,7 @@ async function loadSettings() {
     return;
   }
   if (!lastSettings) return;
-  setCompanionName(lastSettings.companion_name || 'Gethu');
+  setCompanionName(lastSettings.companion_name || 'Friendly Companion');
   if (lastSettings.setup_complete === false) {
     welcome.open(lastSettings);
   }
@@ -655,7 +655,7 @@ function init() {
   synth.refreshVoices();
   globalThis.setTimeout(() => synth.refreshVoices(), 300);
   globalThis.setTimeout(() => {
-    console.info('[gethu] voice:', voiceDiagnostics());
+    console.info('[companion] voice:', voiceDiagnostics());
   }, 1200);
 }
 

@@ -14,7 +14,7 @@ import logging
 import re
 from pathlib import Path
 
-logger = logging.getLogger("gethu.keys")
+logger = logging.getLogger("companion.keys")
 
 _KEY_LINE = re.compile(r"^\s*(?:export\s+)?GEMINI_API_KEY\s*=.*$", re.MULTILINE)
 

@@ -1,7 +1,7 @@
 [project]
-name = "gethu-companion"
+name = "friendly-companion"
 version = "0.1.0"
-description = "Gethu — a personal AI companion with Tanglish conversation and browser voice"
+description = "Friendly Companion — a personal AI companion with Tanglish conversation and browser voice"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE"]

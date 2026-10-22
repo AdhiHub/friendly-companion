@@ -11,7 +11,7 @@ from app.models.schemas import ChatRequest
 from app.services.conversation_service import ChatError, ChatService, sse_frames
 from app.services.gemini_service import GeminiError
 
-logger = logging.getLogger("gethu.api.chat")
+logger = logging.getLogger("companion.api.chat")
 
 router = APIRouter(prefix="/api", tags=["chat"])
 

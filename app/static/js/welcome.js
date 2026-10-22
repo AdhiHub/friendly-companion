@@ -38,7 +38,7 @@ export function createWelcomeScreen({ els, onDone = () => {}, toast = () => {} }
       els.name.value = name;
       markActiveChip(name);
     }
-    if (els.brand) els.brand.textContent = name || 'Gethu';
+    if (els.brand) els.brand.textContent = name || 'Friendly Companion';
     // Only ask for the key when there isn't one already.
     const hasKey = Boolean(settings?.api_key_configured);
     if (els.keyStep) els.keyStep.hidden = hasKey;

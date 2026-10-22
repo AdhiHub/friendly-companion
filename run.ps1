@@ -1,11 +1,11 @@
-# Start Gethu (Windows). Runs setup automatically if needed.
+# Start Friendly Companion (Windows). Runs setup automatically if needed.
 
 $ErrorActionPreference = 'Stop'
 Set-Location -Path $PSScriptRoot
 
 # --- make sure the app is set up -----------------------------------------------
 if (-not (Test-Path .venv)) {
-    Write-Host "First run - setting up Gethu..."
+    Write-Host "First run - setting up Friendly Companion..."
     Write-Host ""
     & .\setup.ps1
 }
@@ -23,7 +23,7 @@ if (-not (Test-Path .env)) {
 
 $keyLine = Select-String -Path .env -Pattern '^GEMINI_API_KEY=.+' -ErrorAction SilentlyContinue
 if (-not $keyLine) {
-    Write-Host "! No Gemini API key is set, so Gethu can't reply yet." -ForegroundColor Yellow
+    Write-Host "! No Gemini API key is set, so Friendly Companion can't reply yet." -ForegroundColor Yellow
     Write-Host ""
     Write-Host "  1. Get a free key:  https://aistudio.google.com/apikey"
     Write-Host "  2. Put it in .env:  GEMINI_API_KEY=your_key_here"
@@ -32,8 +32,8 @@ if (-not $keyLine) {
     Write-Host ""
 }
 
-$host_ = if ($env:GETHU_HOST) { $env:GETHU_HOST } else { '127.0.0.1' }
-$port  = if ($env:GETHU_PORT) { $env:GETHU_PORT } else { '8000' }
+$host_ = if ($env:COMPANION_HOST) { $env:COMPANION_HOST } else { '127.0.0.1' }
+$port  = if ($env:COMPANION_PORT) { $env:COMPANION_PORT } else { '8000' }
 
 # --- warn early if the port is taken --------------------------------------------
 $portBusy = $false
@@ -44,12 +44,12 @@ try {
 
 if ($portBusy) {
     Write-Host "x Port $port is already in use." -ForegroundColor Red
-    Write-Host "  Start on a different one:  `$env:GETHU_PORT='8001'; .\run.ps1"
+    Write-Host "  Start on a different one:  `$env:COMPANION_PORT='8001'; .\run.ps1"
     exit 1
 }
 
 Write-Host ""
-Write-Host "  Gethu is starting..." -ForegroundColor Green
+Write-Host "  Friendly Companion is starting..." -ForegroundColor Green
 Write-Host "  Open:  http://${host_}:${port}"
 Write-Host "  Stop:  Ctrl + C"
 Write-Host ""
@@ -57,7 +57,7 @@ Write-Host "  If the browser shows an old version, press Ctrl + Shift + R." -For
 Write-Host ""
 
 # Open the browser automatically so setup can be finished in the web UI.
-if ($env:GETHU_NO_BROWSER -ne '1') {
+if ($env:COMPANION_NO_BROWSER -ne '1') {
     try { Start-Process "http://${host_}:${port}" } catch { }
 }
 

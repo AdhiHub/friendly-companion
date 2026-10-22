@@ -47,7 +47,7 @@ def test_write_key_to_env_creates_the_file(tmp_path: Path):
 def test_write_key_to_env_replaces_an_existing_key(tmp_path: Path):
     env = tmp_path / ".env"
     env.write_text(
-        "GEMINI_API_KEY=old-key-value-that-is-long-enough\nGETHU_PORT=8000\n",
+        "GEMINI_API_KEY=old-key-value-that-is-long-enough\nCOMPANION_PORT=8000\n",
         encoding="utf-8",
     )
     write_key_to_env(env, GOOD_KEY)
@@ -55,16 +55,16 @@ def test_write_key_to_env_replaces_an_existing_key(tmp_path: Path):
     assert f"GEMINI_API_KEY={GOOD_KEY}" in text
     assert "old-key-value-that-is-long-enough" not in text
     # Other settings are preserved.
-    assert "GETHU_PORT=8000" in text
+    assert "COMPANION_PORT=8000" in text
 
 
 def test_write_key_to_env_appends_when_absent(tmp_path: Path):
     env = tmp_path / ".env"
-    env.write_text("GETHU_PORT=8000", encoding="utf-8")
+    env.write_text("COMPANION_PORT=8000", encoding="utf-8")
     write_key_to_env(env, GOOD_KEY)
     text = env.read_text(encoding="utf-8")
     assert f"GEMINI_API_KEY={GOOD_KEY}" in text
-    assert "GETHU_PORT=8000" in text
+    assert "COMPANION_PORT=8000" in text
 
 
 def test_env_file_is_not_world_readable(tmp_path: Path):

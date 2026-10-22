@@ -62,20 +62,20 @@ def test_install_leaves_single_family_untouched(monkeypatch):
 
 
 def test_prefer_ipv4_respects_opt_out(monkeypatch):
-    monkeypatch.setenv("GETHU_PREFER_IPV4", "0")
+    monkeypatch.setenv("COMPANION_PREFER_IPV4", "0")
     net._APPLIED = False
     assert net.prefer_ipv4() is False
 
 
 def test_prefer_ipv4_skips_when_ipv6_healthy(monkeypatch):
-    monkeypatch.delenv("GETHU_PREFER_IPV4", raising=False)
+    monkeypatch.delenv("COMPANION_PREFER_IPV4", raising=False)
     monkeypatch.setattr(net, "_ipv6_usable", lambda timeout=1.5: True)
     net._APPLIED = False
     assert net.prefer_ipv4() is False
 
 
 def test_prefer_ipv4_installs_when_ipv6_broken(monkeypatch):
-    monkeypatch.delenv("GETHU_PREFER_IPV4", raising=False)
+    monkeypatch.delenv("COMPANION_PREFER_IPV4", raising=False)
     monkeypatch.setattr(net, "_ipv6_usable", lambda timeout=1.5: False)
     monkeypatch.setattr(socket, "getaddrinfo", lambda *a, **k: _fake_results(socket.AF_INET))
     net._APPLIED = False

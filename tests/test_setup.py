@@ -27,7 +27,7 @@ def _app(tmp_path: Path, api_key: str | None = None) -> TestClient:
 
 def test_default_settings_report_the_default_name(client: TestClient):
     settings = client.get("/api/settings").json()
-    assert settings["companion_name"] == "Gethu"
+    assert settings["companion_name"] == "Friendly Companion"
     assert settings["setup_complete"] is True  # key comes from the test config
 
 
@@ -154,4 +154,4 @@ def test_name_is_used_in_the_system_prompt(tmp_path: Path):
 
 
 def test_health_reports_the_companion_name(client: TestClient):
-    assert client.get("/api/health").json()["companion_name"] == "Gethu"
+    assert client.get("/api/health").json()["companion_name"] == "Friendly Companion"

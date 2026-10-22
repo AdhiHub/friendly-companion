@@ -70,9 +70,9 @@ export function createSettingsPanel({
         els.apiPill.className = `pill ${settings.api_key_configured ? 'ok' : 'err'}`;
       }
       if (els.name && document.activeElement !== els.name) {
-        els.name.value = settings.companion_name || 'Gethu';
+        els.name.value = settings.companion_name || 'Friendly Companion';
       }
-      setCompanionName(settings.companion_name || 'Gethu');
+      setCompanionName(settings.companion_name || 'Friendly Companion');
     } catch (err) {
       if (els.apiStatus) els.apiStatus.textContent = err.message;
       if (els.apiPill) {

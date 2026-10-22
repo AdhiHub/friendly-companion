@@ -109,7 +109,7 @@ test('a full turn goes listening → thinking → speaking → listening', async
   });
 
   live.start();
-  live.handleFinal('hello gethu');
+  live.handleFinal('hello there');
   await flush();
 
   assert.equal(live.getState(), 'speaking');
@@ -120,7 +120,7 @@ test('a full turn goes listening → thinking → speaking → listening', async
   assert.deepEqual(states, ['listening', 'thinking', 'speaking', 'listening']);
 });
 
-test('the mic is released before Gethu speaks (never hears itself)', async () => {
+test('the mic is released before Friendly Companion speaks (never hears itself)', async () => {
   const rec = fakeRecognizer();
   const synth = fakeSynth();
   const live = createLiveConversation({

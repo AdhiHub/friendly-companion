@@ -15,7 +15,7 @@ from typing import Any
 from app.config import AppConfig
 from app.services.key_store import KeyStore
 
-logger = logging.getLogger("gethu.gemini")
+logger = logging.getLogger("companion.gemini")
 
 
 class GeminiError(Exception):
@@ -43,7 +43,7 @@ def _classify(exc: BaseException) -> GeminiError:
 
     if status in (401, 403) or "api key not valid" in text or "unauthenticated" in name:
         return GeminiError(
-            "Gethu couldn't authenticate with Gemini. Check GEMINI_API_KEY in your .env file.",
+            "Friendly Companion couldn't authenticate with Gemini. Check GEMINI_API_KEY in your .env file.",
             kind="auth",
         )
     if status == 429 or "resource_exhausted" in name or "rate limit" in text:

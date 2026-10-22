@@ -1,4 +1,4 @@
-# Gethu one-command setup for Windows (PowerShell).
+# Friendly Companion one-command setup for Windows (PowerShell).
 # Checks everything first, then creates a virtual environment, installs
 # dependencies and prepares .env.
 
@@ -12,14 +12,14 @@ function Die($m)  { Bad $m; exit 1 }
 
 $problems = New-Object System.Collections.Generic.List[string]
 
-Write-Host "Gethu setup" -ForegroundColor White
+Write-Host "Friendly Companion setup" -ForegroundColor White
 Write-Host ""
 
 # ------------------------------------------------------------------ preflight
 Write-Host "Checking your system" -ForegroundColor White
 
-if (-not (Test-Path 'requirements.txt')) { Die "Run this from the Gethu folder (requirements.txt not found)." }
-if (-not (Test-Path '.env.example'))     { Die "Run this from the Gethu folder (.env.example not found)." }
+if (-not (Test-Path 'requirements.txt')) { Die "Run this from the Friendly Companion folder (requirements.txt not found)." }
+if (-not (Test-Path '.env.example'))     { Die "Run this from the Friendly Companion folder (.env.example not found)." }
 
 # 1. Python -----------------------------------------------------------------
 $py = $null
@@ -40,7 +40,7 @@ foreach ($candidate in @('py', 'python', 'python3')) {
 if ($py) {
     Ok "Python $pyVer"
 } elseif ($foundAny) {
-    Bad "Python $foundAny is too old - Gethu needs 3.11 or newer."
+    Bad "Python $foundAny is too old - Friendly Companion needs 3.11 or newer."
     Write-Host ""
     Write-Host "  Install Python 3.12+ from https://www.python.org/downloads/"
     Write-Host "  During install, tick 'Add Python to PATH', then run this script again."
@@ -83,13 +83,13 @@ try {
     if ($freeMb -ge 500) {
         Ok "$freeMb MB free disk space"
     } else {
-        Bad "Only $freeMb MB free - Gethu needs about 500 MB."
+        Bad "Only $freeMb MB free - Friendly Companion needs about 500 MB."
         $problems.Add("Free up some disk space, then run this script again.")
     }
 } catch { }
 
 # 5. Port -------------------------------------------------------------------
-$port = if ($env:GETHU_PORT) { $env:GETHU_PORT } else { '8000' }
+$port = if ($env:COMPANION_PORT) { $env:COMPANION_PORT } else { '8000' }
 $portBusy = $false
 try {
     $inUse = Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue
@@ -97,8 +97,8 @@ try {
 } catch { }
 
 if ($portBusy) {
-    Warn "Port $port is already in use - Gethu will fail to start on it."
-    $problems.Add("Free port $port, or start Gethu on another one:`n     `$env:GETHU_PORT='8001'; .\run.ps1")
+    Warn "Port $port is already in use - Friendly Companion will fail to start on it."
+    $problems.Add("Free port $port, or start Friendly Companion on another one:`n     `$env:COMPANION_PORT='8001'; .\run.ps1")
 } else {
     Ok "Port $port is free"
 }
@@ -116,7 +116,7 @@ if ($problems.Count -gt 0) {
 }
 
 # ------------------------------------------------------------------- install
-Write-Host "Setting up Gethu" -ForegroundColor White
+Write-Host "Setting up Friendly Companion" -ForegroundColor White
 
 if (Test-Path .venv) {
     Ok "Reusing existing .venv"
@@ -159,7 +159,7 @@ $keyLine = Select-String -Path .env -Pattern '^GEMINI_API_KEY=.+' -ErrorAction S
 if (-not $keyLine) {
     Write-Host "One step left - add your free Gemini API key." -ForegroundColor Yellow
     Write-Host ""
-    Write-Host "  Easiest: start Gethu and paste it in the browser." -ForegroundColor White
+    Write-Host "  Easiest: start Friendly Companion and paste it in the browser." -ForegroundColor White
     Write-Host "    .\run.ps1  ->  the welcome screen asks for it."
     Write-Host ""
     Write-Host "  Or set it in the file now:"
@@ -171,7 +171,7 @@ if (-not $keyLine) {
 } else {
     Ok "API key detected"
     Write-Host ""
-    Write-Host "Gethu is ready." -ForegroundColor Green -NoNewline
+    Write-Host "Friendly Companion is ready." -ForegroundColor Green -NoNewline
     Write-Host "  Start it with:  .\run.ps1"
 }
 Write-Host ""

@@ -10,7 +10,7 @@ from fastapi.responses import FileResponse
 from app.models.schemas import AttachmentInfo
 from app.services.attachment_service import AttachmentError
 
-logger = logging.getLogger("gethu.api.attachments")
+logger = logging.getLogger("companion.api.attachments")
 
 router = APIRouter(prefix="/api/attachments", tags=["attachments"])
 

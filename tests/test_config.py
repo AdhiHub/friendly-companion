@@ -10,8 +10,8 @@ ENV_KEYS = [
     "GEMINI_API_KEY",
     "GEMINI_MODEL",
     "GEMINI_FALLBACK_MODELS",
-    "GETHU_HOST",
-    "GETHU_PORT",
+    "COMPANION_HOST",
+    "COMPANION_PORT",
     "MAX_UPLOAD_MB",
     "MAX_HISTORY_MESSAGES",
     "GEMINI_TIMEOUT",
@@ -46,7 +46,7 @@ def test_env_file_values_are_read(tmp_path):
                 "GEMINI_API_KEY=abc123",
                 "GEMINI_MODEL=gemini-3.8-flash",
                 "GEMINI_FALLBACK_MODELS=a-model, b-model ,,",
-                "GETHU_PORT=9999",
+                "COMPANION_PORT=9999",
                 "MAX_UPLOAD_MB=5",
                 "GEMINI_TIMEOUT=90",
                 "LOG_LEVEL=weird",
@@ -68,7 +68,7 @@ def test_env_file_values_are_read(tmp_path):
 def test_bad_numbers_are_clamped(tmp_path):
     env = tmp_path / ".env"
     env.write_text(
-        "GETHU_PORT=notanumber\nMAX_UPLOAD_MB=99999\nGEMINI_TIMEOUT=nope\n",
+        "COMPANION_PORT=notanumber\nMAX_UPLOAD_MB=99999\nGEMINI_TIMEOUT=nope\n",
         encoding="utf-8",
     )
     cfg = load_config(env_file=env)

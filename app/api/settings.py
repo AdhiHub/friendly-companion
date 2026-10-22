@@ -22,7 +22,7 @@ from app.services.key_store import ApiKeyError, normalise_key
 
 router = APIRouter(prefix="/api/settings", tags=["settings"])
 
-logger = logging.getLogger("gethu.settings")
+logger = logging.getLogger("companion.settings")
 
 
 def _name_from(payload: str | None) -> str:
@@ -109,5 +109,5 @@ async def set_api_key(payload: ApiKeyIn, request: Request) -> ApiKeyOut:
         ok=True,
         api_key_configured=True,
         companion_name=name,
-        message="API key saved. Gethu is ready to chat.",
+        message="API key saved. Friendly Companion is ready to chat.",
     )

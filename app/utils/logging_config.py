@@ -31,12 +31,12 @@ class SecretRedactingFilter(logging.Filter):
 
 def configure_logging(level: str = "INFO") -> None:
     root = logging.getLogger()
-    if any(getattr(h, "_gethu_handler", False) for h in root.handlers):
+    if any(getattr(h, "_companion_handler", False) for h in root.handlers):
         return
     handler = logging.StreamHandler()
     handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
     handler.addFilter(SecretRedactingFilter())
-    handler._gethu_handler = True  # type: ignore[attr-defined]
+    handler._companion_handler = True  # type: ignore[attr-defined]
     root.addHandler(handler)
     root.setLevel(level.upper())
     logging.getLogger("httpx").setLevel(logging.WARNING)

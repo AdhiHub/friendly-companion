@@ -21,7 +21,7 @@ from __future__ import annotations
 import logging
 import socket
 
-logger = logging.getLogger("gethu.net")
+logger = logging.getLogger("companion.net")
 
 _APPLIED = False
 
@@ -44,7 +44,7 @@ def _install() -> None:
 def prefer_ipv4() -> bool:
     """Install IPv4-first DNS ordering once. Returns True if it was applied.
 
-    Controlled by GETHU_PREFER_IPV4 (default on); set it to 0 to opt out on a
+    Controlled by COMPANION_PREFER_IPV4 (default on); set it to 0 to opt out on a
     host with fully working IPv6.
     """
     global _APPLIED
@@ -53,8 +53,8 @@ def prefer_ipv4() -> bool:
 
     import os
 
-    if os.getenv("GETHU_PREFER_IPV4", "1").strip().lower() in {"0", "false", "no", "off"}:
-        logger.info("IPv4 preference disabled via GETHU_PREFER_IPV4")
+    if os.getenv("COMPANION_PREFER_IPV4", "1").strip().lower() in {"0", "false", "no", "off"}:
+        logger.info("IPv4 preference disabled via COMPANION_PREFER_IPV4")
         return False
 
     # Only reorder when IPv6 is actually unusable — avoids changing behaviour

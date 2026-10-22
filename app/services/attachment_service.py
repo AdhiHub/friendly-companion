@@ -14,7 +14,7 @@ from app.config import AppConfig
 from app.models.schemas import AttachmentInfo
 from app.utils.validation import new_id, safe_filename
 
-logger = logging.getLogger("gethu.attachments")
+logger = logging.getLogger("companion.attachments")
 
 IMAGE_TYPES = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
 DOCUMENT_TYPES = {"application/pdf": ".pdf", "text/plain": ".txt"}

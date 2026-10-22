@@ -10,7 +10,7 @@ from typing import Any
 from app.config import AppConfig
 from app.services.prompt_service import DEFAULT_COMPANION_NAME
 
-logger = logging.getLogger("gethu.settings")
+logger = logging.getLogger("companion.settings")
 
 _ALLOWED_KEYS = {"model", "companion_name"}
 

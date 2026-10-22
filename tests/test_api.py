@@ -23,7 +23,7 @@ def test_health_reports_configuration(client: TestClient):
 def test_index_served(client: TestClient):
     response = client.get("/")
     assert response.status_code == 200
-    assert "Gethu" in response.text
+    assert "Friendly Companion" in response.text
     assert "/static/js/app.js" in response.text
 
 
@@ -76,7 +76,7 @@ def test_prompt_and_mode_reach_the_model(client: TestClient, fake_gemini: FakeGe
         "".join(r.iter_text())
     call = fake_gemini.calls[0]
     assert "MODE: respectful" in call["system"]
-    assert "Gethu" in call["system"]
+    assert "Friendly Companion" in call["system"]
 
 
 def test_unknown_conversation_id_creates_new_one(client: TestClient, fake_gemini: FakeGemini, read_sse):

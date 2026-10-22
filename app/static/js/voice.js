@@ -1,4 +1,4 @@
-/* Gethu voice layer — browser SpeechRecognition (input) + SpeechSynthesis
+/* Friendly Companion voice layer — browser SpeechRecognition (input) + SpeechSynthesis
    (output). Everything here is capability-detected at runtime; there is no
    assumption that a microphone, a male voice, or any speech API exists.
 
@@ -430,7 +430,7 @@ export function createRecognizer(env = globalThis, opts = {}) {
  * without a microphone or speaker.
  *
  * Safety rules:
- *  - the mic is aborted before speaking, so Gethu never hears itself;
+ *  - the mic is aborted before speaking, so Friendly Companion never hears itself;
  *  - one stop() (tap, Escape, unload) halts the whole loop;
  *  - empty/no-speech results re-listen instead of ending the session;
  *  - a hard error (permission denied) ends the session rather than looping.

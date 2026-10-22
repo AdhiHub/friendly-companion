@@ -1,4 +1,4 @@
-"""Pydantic request/response schemas for the Gethu API."""
+"""Pydantic request/response schemas for the Friendly Companion API."""
 
 from __future__ import annotations
 

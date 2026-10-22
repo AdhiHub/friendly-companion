@@ -47,7 +47,7 @@ def test_mode_directives_appear_in_system_prompt():
 def test_default_name_is_used_when_none_given():
     service = PromptService()
     prompt = service.system_prompt("friendly")
-    assert "You are Gethu," in prompt
+    assert "You are Friendly Companion," in prompt
     assert "{name}" not in prompt
 
 
@@ -74,7 +74,7 @@ def test_name_is_sanitised_so_it_cannot_alter_the_prompt():
 
 def test_blank_name_falls_back_to_the_default():
     service = PromptService()
-    assert "You are Gethu," in service.system_prompt("friendly", "   ")
+    assert "You are Friendly Companion," in service.system_prompt("friendly", "   ")
 
 
 def test_unknown_mode_falls_back_to_friendly():
@@ -112,4 +112,4 @@ def test_build_contents_puts_attachments_before_text():
 
 def test_missing_prompt_file_falls_back_gracefully(tmp_path):
     service = PromptService(tmp_path / "nope.txt")
-    assert "Gethu" in service.system_prompt("friendly")
+    assert "Friendly Companion" in service.system_prompt("friendly")

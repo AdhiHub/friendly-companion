@@ -1,4 +1,4 @@
-"""FastAPI application factory for the Gethu companion."""
+"""FastAPI application factory for the Friendly Companion app."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ from app.services.settings_service import SettingsStore
 from app.utils.logging_config import configure_logging
 from app.utils.net import prefer_ipv4
 
-logger = logging.getLogger("gethu")
+logger = logging.getLogger("companion")
 
 VERSION = "0.1.0"
 STATIC_DIR = Path(__file__).resolve().parent / "static"
@@ -36,14 +36,14 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
-        logger.info("Gethu starting (model=%s, key=%s)", config.model,
+        logger.info("Friendly Companion starting (model=%s, key=%s)", config.model,
                     "set" if key_store.configured else "MISSING")
         yield
         db = getattr(app.state, "db", None)
         if db is not None:
             db.close()
 
-    app = FastAPI(title="Gethu", version=VERSION, lifespan=lifespan, docs_url=None, redoc_url=None)
+    app = FastAPI(title="Friendly Companion", version=VERSION, lifespan=lifespan, docs_url=None, redoc_url=None)
 
     db = Database(config.db_path)
     repo = Repository(db)
@@ -84,7 +84,7 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
     @app.exception_handler(Exception)
     async def unexpected_error_handler(_: Request, exc: Exception) -> JSONResponse:
         logger.exception("Unhandled error: %s", type(exc).__name__)
-        return JSONResponse(status_code=500, content={"detail": "Something went wrong on Gethu's side."})
+        return JSONResponse(status_code=500, content={"detail": "Something went wrong on our side."})
 
     # -- api ---------------------------------------------------------------
     app.include_router(chat.router)

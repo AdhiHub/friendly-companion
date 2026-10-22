@@ -44,12 +44,12 @@ function installDom(nodes, placeholderNodes = []) {
 
 /* --------------------------------------------------------------- tests */
 
-test('the default name is Gethu', () => {
+test('the default name is Friendly Companion', () => {
   const restore = installDom([]);
   try {
     setCompanionName('');
     assert.equal(getCompanionName(), DEFAULT_NAME);
-    assert.equal(DEFAULT_NAME, 'Gethu');
+    assert.equal(DEFAULT_NAME, 'Friendly Companion');
   } finally {
     restore();
   }

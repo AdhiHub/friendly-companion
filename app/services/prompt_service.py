@@ -13,7 +13,7 @@ from app.models.schemas import MODES, Mode
 
 PROMPT_FILE = Path(__file__).resolve().parent.parent / "prompts" / "companion_system_prompt.txt"
 
-DEFAULT_COMPANION_NAME = "Gethu"
+DEFAULT_COMPANION_NAME = "Friendly Companion"
 
 _MODE_DIRECTIVES: dict[str, str] = {
     "friendly": "MODE: friendly (default). Talk like a comfortable, trusted friend.",

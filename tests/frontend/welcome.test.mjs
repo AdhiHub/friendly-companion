@@ -75,7 +75,7 @@ test('the key step is hidden when a key already exists', () => {
 test('the key step is shown when there is no key', () => {
   const els = makeEls();
   const screen = createWelcomeScreen({ els });
-  screen.open({ companion_name: 'Gethu', api_key_configured: false });
+  screen.open({ companion_name: 'Friendly Companion', api_key_configured: false });
   assert.equal(els.keyStep.hidden, false);
 });
 
@@ -86,7 +86,7 @@ test('saving only the name does not touch the key endpoint', async () => {
   });
   try {
     const screen = createWelcomeScreen({ els });
-    screen.open({ companion_name: 'Gethu', api_key_configured: true });
+    screen.open({ companion_name: 'Friendly Companion', api_key_configured: true });
     els.name.value = 'Mithu';
     await screen.save();
     assert.deepEqual(
@@ -107,7 +107,7 @@ test('a name and a key are both sent when both are given', async () => {
   });
   try {
     const screen = createWelcomeScreen({ els });
-    screen.open({ companion_name: 'Gethu', api_key_configured: false });
+    screen.open({ companion_name: 'Friendly Companion', api_key_configured: false });
     els.name.value = 'Mithu';
     els.key.value = 'AIzaSyD-ExampleKey_1234567890abcdef';
     await screen.save();
@@ -126,7 +126,7 @@ test('a blank name is refused before anything is sent', async () => {
   const stub = installFetch({});
   try {
     const screen = createWelcomeScreen({ els });
-    screen.open({ companion_name: 'Gethu', api_key_configured: true });
+    screen.open({ companion_name: 'Friendly Companion', api_key_configured: true });
     els.name.value = '   ';
     await screen.save();
     assert.equal(stub.calls.length, 0);
@@ -147,7 +147,7 @@ test('a key rejected by the server is reported and the screen stays open', async
   });
   try {
     const screen = createWelcomeScreen({ els });
-    screen.open({ companion_name: 'Gethu', api_key_configured: false });
+    screen.open({ companion_name: 'Friendly Companion', api_key_configured: false });
     els.name.value = 'Mithu';
     els.key.value = 'AIzaSyD-ExampleKey_1234567890abcdef';
     await screen.save();
@@ -167,7 +167,7 @@ test('skipping closes the screen without saving anything', async () => {
   let done = false;
   try {
     const screen = createWelcomeScreen({ els, onDone: () => { done = true; } });
-    screen.open({ companion_name: 'Gethu', api_key_configured: false });
+    screen.open({ companion_name: 'Friendly Companion', api_key_configured: false });
     els.skip.dispatch?.();
     assert.equal(stub.calls.length, 0);
   } finally {
@@ -178,11 +178,11 @@ test('skipping closes the screen without saving anything', async () => {
 test('the screen cannot be reopened over itself', () => {
   const els = makeEls();
   const screen = createWelcomeScreen({ els });
-  screen.open({ companion_name: 'Gethu', api_key_configured: false });
+  screen.open({ companion_name: 'Friendly Companion', api_key_configured: false });
   const first = els.name.value;
   els.name.value = 'Changed';
   screen.open({ companion_name: 'Other', api_key_configured: false });
   // The second open is ignored, so the in-progress edit is not thrown away.
   assert.equal(els.name.value, 'Changed');
-  assert.equal(first, 'Gethu');
+  assert.equal(first, 'Friendly Companion');
 });

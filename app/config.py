@@ -1,4 +1,4 @@
-"""Application configuration for Gethu.
+"""Application configuration for Friendly Companion.
 
 Reads the `.env` file and environment variables, validates them, and exposes a
 single immutable settings object. No secret is ever returned to the frontend.
@@ -59,7 +59,7 @@ class AppConfig:
 
     @property
     def db_path(self) -> Path:
-        return self.data_dir / "gethu.db"
+        return self.data_dir / "companion.db"
 
     @property
     def settings_path(self) -> Path:
@@ -97,8 +97,8 @@ def load_config(env_file: Path | None = None) -> AppConfig:
         api_key=api_key,
         model=model,
         fallback_models=fallbacks,
-        host=os.environ.get("GETHU_HOST", "127.0.0.1").strip() or "127.0.0.1",
-        port=_int_env("GETHU_PORT", 8000, 1, 65535),
+        host=os.environ.get("COMPANION_HOST", "127.0.0.1").strip() or "127.0.0.1",
+        port=_int_env("COMPANION_PORT", 8000, 1, 65535),
         max_upload_mb=_int_env("MAX_UPLOAD_MB", 20, 1, 100),
         max_history_messages=_int_env("MAX_HISTORY_MESSAGES", 40, 2, 500),
         stream_timeout=_float_env("GEMINI_TIMEOUT", 45.0, 5.0, 600.0),
